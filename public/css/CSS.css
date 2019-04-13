@@ -1,0 +1,64 @@
+.w3-sidebar a {
+  \font-family: "Roboto", sans-serif
+}
+
+body,h1,h2,h3,h4,h5,h6,.w3-wide {
+  font-family: "Montserrat", sans-serif;
+}
+
+table, td, th {
+  margin-left: 10px;
+  border: 1px solid #ddd;
+  text-align:center;
+}
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+th,td {
+  padding: 15px;
+}
+th{
+  background-color: black;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.page-item{
+     Display: inline-block;
+}
+
+/* HALAMAN YANG TIDAK DIBUKA */
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    background: white;
+}
+
+/* BAGIAN HALAMAN YANG DIBUKA */
+.page-link {
+  Display: inline-block;
+    float: left;
+    background: black;
+    color: white;
+    border: 1px solid #4CAF50;
+        padding: 8px 16px;
+        transition: background-color .3s;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+/* BASIC CSS DARI KO FRANS
+.page-item{
+     Padding: 5px;
+     Display: inline-block;
+     List-style: none;
+}
+.page-item.active{
+     background: black;
+} */
