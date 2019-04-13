@@ -240,6 +240,7 @@ class ListingController extends Controller {
                     'mp.reference_fee',
                     'mp.ppn',
                 ])
+                
                 ->first();
 
         $mlistings = mlisting::find($request->mlistingid);
