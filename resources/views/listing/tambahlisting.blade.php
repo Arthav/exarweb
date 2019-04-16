@@ -94,11 +94,11 @@ Tambah Listing
                       
                         <p>
                             <label>Luas Bangunan (m2)</label>
-                            <input class="w3-input" type="text" name="luas_bangunan">
+                            <input required class="w3-input" type="text" name="luas_bangunan">
                         </p>
                         <p>
                             <label>Luas Tanah (m2)</label>
-                            <input class="w3-input" type="text" name="luas_tanah">
+                            <input required class="w3-input" type="text" name="luas_tanah">
                         </p>
                         <p>
                             <label>Tingkat</label>
@@ -115,13 +115,13 @@ Tambah Listing
                         </p>
 
                         <p>
-                            <label>Kamar Mandi total</label>
-                            <input class="w3-input" type="text" name="kamar_mandi">
+                            <label>Kamar Mandi total (Diisi 0 apabila tidak ada)</label>
+                            <input required class="w3-input" type="text" name="kamar_mandi">
                         </p>
 
                         <p>
-                            <label>Kamar Tidur total</label>
-                            <input class="w3-input" type="text" name="kamar_tidur">
+                            <label>Kamar Tidur total (Diisi 0 apabila tidak ada)</label>
+                            <input required class="w3-input" type="text" name="kamar_tidur">
                         </p>
 
                         <p>

@@ -36,14 +36,12 @@ Property list
                         <div class="col-md-6">
                             <label><b>Jenis List :</b></label>
                             <select name="jenis_list" class="form-control">
-                                <option value="" {{$jenis_properti == '' ? 'Selected' : ''}}></option>
+                                <option value="" {{$jenis_list == '' ? 'Selected' : ''}}>Semua</option>
                                 <option value="Dijual" {{$jenis_list == 'Dijual' ? 'Selected' : ''}}>Dijual</option>
                                 <option value="Disewakan" {{$jenis_list  == 'Disewakan' ? 'Selected' : ''}}>Disewakan</option>
                             </select>
                         </div>
-                        <div class="col-md-3">
-                            <label><b>Tipe Unit :</b></label><input class="form-control input-sm" type="text" name="tipe_unit" placeholder="Cari Tipe Unit" value="{{$tipe_unit}}">
-                        </div>
+                        
                         <div class="col-md-3">
                             <label><b>Kota :</b></label><input class="form-control input-sm" type="text" name="kota" placeholder="Cari Kota" value="{{$kota}}">
                         </div>
@@ -53,7 +51,7 @@ Property list
                         <div class="col-md-3">
                             <label><b>Jenis Properti :</b></label>
                             <select name="jenis_properti" class="form-control">
-                                <option value="" {{$jenis_properti == '' ? 'Selected' : ''}}></option>
+                                <option value="" {{$jenis_properti == '' ? 'Selected' : ''}}>Semua</option>
                                 <option value="Rumah" {{$jenis_properti == 'Rumah' ? 'Selected' : ''}}>Rumah</option>
                                 <option value="Tanah" {{$jenis_properti  == 'Tanah' ? 'Selected' : ''}}>Tanah</option>
                                 <option value="Apartemen" {{$jenis_properti  == 'Apartemen' ? 'Selected' : ''}}>Apartemen</option>
@@ -68,7 +66,7 @@ Property list
                         <div class="col-md-3">
                             <label><b>Kamar Tidur</b></label>
                             <select name="kamar_tidur" class="form-control">
-                                <option value="" {{$jenis_properti == '' ? 'Selected' : ''}}></option>
+                                <option value="" {{$kamar_tidur == '0' ? 'Selected' : ''}}>Semua</option>
                                 <option value="1" {{$kamar_tidur == '1' ? 'Selected' : ''}}>1</option>
                                 <option value="2" {{$kamar_tidur == '2' ? 'Selected' : ''}}>2</option>
                                 <option value="3" {{$kamar_tidur == '3' ? 'Selected' : ''}}>3</option>
@@ -80,17 +78,17 @@ Property list
                         <div class="col-md-3">
                             <label><b>Kamar Mandi</b></label>
                             <select name="kamar_mandi" class="form-control">
-                                <option value="" {{$jenis_properti == '' ? 'Selected' : ''}}></option>
+                                <option value="" {{$kamar_mandi == '0' ? 'Selected' : ''}}>Semua</option>
                                 <option value="1" {{$kamar_mandi == '1' ? 'Selected' : ''}}>1</option>
-                                <option value="2" {{$kamar_mandi == '1' ? 'Selected' : ''}}>2</option>
-                                <option value="3" {{$kamar_mandi == '1' ? 'Selected' : ''}}>3</option>
+                                <option value="2" {{$kamar_mandi == '2' ? 'Selected' : ''}}>2</option>
+                                <option value="3" {{$kamar_mandi == '3' ? 'Selected' : ''}}>3</option>
                             </select>
                         </div>
 
                         <div class="col-md-3">
                             <label><b>Arah Properti</b></label>
                             <select name="arah_properti" class="form-control input-sm">
-                                <option value="" {{$jenis_properti == '' ? 'Selected' : ''}}></option>
+                                <option value="" {{$arah_properti == '' ? 'Selected' : ''}}>Semua</option>
                                 <option value="Utara" {{$arah_properti == 'Utara' ? 'Selected' : ''}}>Utara</option>
                                 <option value="Selatan" {{$arah_properti == 'Selatan' ? 'Selected' : ''}}>Selatan</option>
                                 <option value="Timur" {{$arah_properti == 'Timur' ? 'Selected' : ''}}>Timur</option>
