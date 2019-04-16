@@ -260,7 +260,7 @@
 
                     <!-- City -->
                     <div class="city">
-                        <img src="{{ asset('bluesky/images/city_1.jpg') }}" alt="https://unsplash.com/@dnevozhai">
+                        <img src="{{ asset('bluesky/images/city1.jpg') }}" alt="https://unsplash.com/@dnevozhai">
                         <div class="city_overlay">
                             <a href="#" class="d-flex flex-column align-items-center justify-content-center">
                                 <div class="city_title">Surabaya City</div>
@@ -271,7 +271,7 @@
 
                     <!-- City -->
                     <div class="city">
-                        <img src="{{ asset('bluesky/images/city_2.jpg') }}" alt="https://unsplash.com/@lachlanjdempsey">
+                        <img src="{{ asset('bluesky/images/city2.jpg') }}" alt="https://unsplash.com/@lachlanjdempsey">
                         <div class="city_overlay">
                             <a href="#" class="d-flex flex-column align-items-center justify-content-center">
                                 <div class="city_title">Jakarta</div>
@@ -282,7 +282,7 @@
 
                     <!-- City -->
                     <div class="city">
-                        <img src="{{ asset('bluesky/images/city_3.jpg') }}" alt="https://unsplash.com/@hellolightbulb">
+                        <img src="{{ asset('bluesky/images/city3.jpg') }}" alt="https://unsplash.com/@hellolightbulb">
                         <div class="city_overlay">
                             <a href="#" class="d-flex flex-column align-items-center justify-content-center">
                                 <div class="city_title">Makasar</div>
@@ -293,7 +293,7 @@
 
                     <!-- City -->
                     <div class="city">
-                        <img src="{{ asset('bluesky/images/city_4.jpg') }}" alt="https://unsplash.com/@justinbissonbeck">
+                        <img src="{{ asset('bluesky/images/city4.jpg') }}" alt="https://unsplash.com/@justinbissonbeck">
                         <div class="city_overlay">
                             <a href="#" class="d-flex flex-column align-items-center justify-content-center">
                                 <div class="city_title">Bandung</div>
