@@ -9,6 +9,7 @@ use App\Mlisting;
 use App\Mtransaction;
 use App\User;
 use App\Image;
+Use App\Mdeveloper;
 use Auth;
 use App\Image_uploaded;
 
@@ -82,7 +83,9 @@ class ListingController extends Controller {
     }
 
     public function tambah_listing() {
-        return view('listing.tambahlisting');
+        $dev = mdeveloper::all()
+        ->where('delet','=','0');
+        return view('listing.tambahlisting',compact('dev'));
     }
 
     public function simpan_listing(Request $request) {
@@ -101,8 +104,8 @@ class ListingController extends Controller {
         $mlisting->total_unit = $request->total_unit;
         $mlisting->jenis_properti = $request->jenis_properti;       
         $mlisting->luas_bangunan = $request->luas_bangunan;    
-         $mlisting->luas_tanah = $request->luas_tanah;
-                        
+        $mlisting->luas_tanah = $request->luas_tanah;
+                                
         $mlisting->tinggi = $request->tinggi;
         $mlisting->lantai = $request->lantai;
         $mlisting->lokasi = $request->lokasi;
@@ -125,6 +128,7 @@ class ListingController extends Controller {
         $mlisting->kota = $request->kota;
         $mlisting->listrik = $request->listrik;
         $mlisting->legalitas = $request->legalitas;
+        $mlisting->mdeveloper_id = $request->mdeveloper_id;
         $mlisting->sold = 0;
         $mlisting->save();
 
@@ -137,6 +141,7 @@ class ListingController extends Controller {
 
         $mlisting = Mlisting::find($request->id);
         $images = Image::where('mlisting_id', $request->id)->orderby('imageid', 'DESC')->get();
+        
         return view('listing.tambahlistingfoto', compact('mlisting', 'images'));
     }
 
@@ -187,6 +192,7 @@ class ListingController extends Controller {
                 ->Where("mlistings.kota", "like", $kota != '' ? $kota : '%')
                 // ->orWhereNull("mlistings.kota")
                 ->whereBetween("mlistings.price", [$min_price, $max_price])
+                ->where("tipe_unit","<>",NULL)
                 ->Where("mlistings.jenis_list", "like", $jenis_list != '' ? $jenis_list : '%')
                 // ->orWhereNull("mlistings.jenis_list")
                 ->Where("mlistings.jenis_properti", "like", $jenis_properti != '' ? $jenis_properti : '%')
@@ -198,7 +204,7 @@ class ListingController extends Controller {
                 ->Where("mlistings.luas_bangunan", "like", $luas_bangunan != '' ? $luas_bangunan : '%')
                 // ->orWhereNull("mlistings.luas_bangunan")
                 ->Where("mlistings.luas_tanah", "like", $luas_tanah != '' ? $luas_tanah : '%')
-                // ->orWhereNull("mlistings.luas_tanah")
+                ->orWhereNull("mlistings.luas_tanah")
                 ->Where("mlistings.arah_properti", "like", $arah_properti != '' ? $arah_properti : '%')
                 // ->orWhereNull("mlistings.arah_properti")
                 ->Where("mlistings.tipe_unit", "like", $tipe_unit != '' ? $tipe_unit : '%')
@@ -206,18 +212,7 @@ class ListingController extends Controller {
                 ->groupBy("mlistings.id")
                 ->get()
         ;
-        // $listing1=image::all()->groupBy('mlisting_id');
-        // // dd($listing1);
-        // $mlistings=mlisting::all()
-        // ->leftjoinsub($listing1,'listing1', function ($join) {
-        //     $join->on('mlistings.id', '=', 'listing1.mlisting_id');
-        // })->get();
-        // $mlisting=DB::table('mlistings')->get();
-        // $mlistings=mlisting::all()
-        // ->joinSub($listing1, 'listing1', function ($join) {
-        //     $join->on('mlistings.id', '=', 'listing1.mlisting_id');
-        // });   
-        // dd($mlistings);
+       
 
         return view('listing.primary', compact('mlistings', 'kota', 'price', 'jenis_list', 'jenis_properti', 'kamar_tidur', 'kamar_mandi', 'luas_bangunan', 'luas_tanah', 'arah_properti', 'tipe_unit','min_price','max_price'));
     }
@@ -240,7 +235,7 @@ class ListingController extends Controller {
                     'mp.reference_fee',
                     'mp.ppn',
                 ])
-                
+
                 ->first();
 
         $mlistings = mlisting::find($request->mlistingid);

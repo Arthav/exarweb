@@ -81,6 +81,15 @@ Tambah Listing
                             <label>Total Unit (Diisi apabila primary listing)</label>
                             <input class="w3-input" type="text" name="total_unit">
                         </p>
+                        <p>
+                            <label>Developer (Diisi apabila primary listing)</label>
+                            <select class="w3-select w3-border" name="mdeveloper_id">
+                                <option value="" disabled selected>None</option>
+                                @foreach ($dev as $dev)
+                                <option value="{{ $dev->id }}">{{ $dev->nama}}</option>
+                                @endforeach
+                            </select>
+                        </p>
 						@endif
                       
                         <p>
