@@ -110,7 +110,7 @@
                         @endif
                     </ul>
                 </div>
-                <div class="menu_phone"><span>call us: </span>652 345 3222 11</div>
+                <div class="menu_phone"><span>Hubungi Kami: </span>)0822 3134 0898</div>
             </div>
 
             <!-- Home -->
@@ -129,7 +129,7 @@
                                         <div class="col">
                                             <div class="slide_content">
                                                 <div class="home_subtitle">Exari</div>
-                                                <div class="home_title">Rumah Impian</div>
+                                                <div class="home_title">Temukan Rumah Impian Anda</div>
                                             </div>
                                         </div>
                                     </div>
@@ -369,7 +369,7 @@
                         <div class="row">
                             <div class="col-lg-3 footer_col">
                                 <div class="footer_about">
-                                    <div class="footer_about_text">Tempat cari properti terbaik di Indonesia. Bergabunglah dengan sejuta agen sukses lainnya di exari.</div>
+                                    <div class="footer_about_text">Tempat cari properti terbaik di Indonesia. Bergabunglah dengan tim marketing sukses kami lainnya di exari.</div>
                                 </div>
                             </div>
                             <div class="col-lg-3 footer_col">

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Mlisting;
 use App\Image;
 use App\Mnew;
+use App\User;
 
 class WelcomeController extends Controller {
 
@@ -21,58 +22,11 @@ class WelcomeController extends Controller {
         $jenis_properti = isset($_GET['jenis_properti']) ? $_GET['jenis_properti'] : '';
         $kamar_tidur = isset($_GET['kamar_tidur']) ? $_GET['kamar_tidur'] : '';
         $kamar_mandi = isset($_GET['kamar_mandi']) ? $_GET['kamar_mandi'] : '';
-        $tipe_unit = isset($_GET['tipe_unit']) ? $_GET['tipe_unit'] : '';
         $luas_bangunan = isset($_GET['luas_bangunan']) ? $_GET['luas_bangunan'] : '';
         $luas_tanah = isset($_GET['luas_tanah']) ? $_GET['luas_tanah'] : '';
         $arah_properti = isset($_GET['arah_properti']) ? $_GET['arah_properti'] : '';
         $min_price = isset($_GET['min_price']) && $_GET['min_price'] != '' ? $_GET['min_price'] : 0;
-        $max_price = isset($_GET['max_price']) && $_GET['max_price'] != '' ? $_GET['max_price'] : 999999999999999;
-        $mlistings = mlisting::leftjoin('images', 'mlistings.id', '=', 'mlisting_id')
-                ->selectRaw("mlistings.id as listid,mlistings.nama,jenis_list,price,commission,nama_pemilik,no_pemilik,tipe_unit,total_unit,available_unit,jenis_properti,luas_bangunan,luas_tanah,tinggi,lantai,lokasi,kamar_mandi,kamar_tidur,arah_properti,spesifikasi,kota,listrik,legalitas,user_id,mdeveloper_id,mlistings.created_at,min(imageid) imageid,mlisting_id")
-                ->Where("mlistings.sold","=",0)
-                ->Where("mlistings.delet","=",0)
-                ->Where("mlistings.kota", "like", $kota != '' ? $kota : '%')
-                // ->orWhereNull("mlistings.kota")
-                ->whereBetween("mlistings.price", [$min_price, $max_price])
-                ->Where("mlistings.jenis_list", "like", $jenis_list != '' ? $jenis_list : '%')
-                // ->orWhereNull("mlistings.jenis_list")
-                ->Where("mlistings.jenis_properti", "like", $jenis_properti != '' ? $jenis_properti : '%')
-                // ->orWhereNull("mlistings.jenis_properti")
-                ->Where("mlistings.kamar_tidur", "like", $kamar_tidur != '' ? $kamar_tidur : '%')
-                // ->orWhereNull("mlistings.kamar_tidur")
-                ->Where("mlistings.kamar_mandi", "like", $kamar_mandi != '' ? $kamar_mandi : '%')
-                // ->orWhereNull("mlistings.kamar_mandi")
-                ->Where("mlistings.luas_bangunan", "like", $luas_bangunan != '' ? $luas_bangunan : '%')
-                ->orWhereNull("mlistings.luas_bangunan")
-                ->Where("mlistings.luas_tanah", "like", $luas_tanah != '' ? $luas_tanah : '%')
-                ->orWhereNull("mlistings.luas_tanah")
-                ->Where("mlistings.arah_properti", "like", $arah_properti != '' ? $arah_properti : '%')
-                // ->orWhereNull("mlistings.arah_properti")
-                ->Where("mlistings.tipe_unit", "like", $tipe_unit != '' ? $tipe_unit : '%')
-                // ->orWhereNull("mlistings.tipe_unit")
-                ->groupBy("mlistings.id")
-                ->get()
-        ;
-        $mlistings2 = mlisting::all()->first();
-        $listing1 = image::all()
-                ->where("mlisting_id", "=", isset($mlistings2->id) ? $mlistings2->id : 0 )
-        ;
-        return view('welcome', compact('mlistings', 'listing1', 'kota', 'price', 'jenis_list', 'jenis_properti', 'kamar_tidur', 'kamar_mandi', 'luas_bangunan', 'luas_tanah', 'arah_properti'));
-    }
-
-    public function properti() {
-        $kota = isset($_GET['kota']) ? $_GET['kota'] : '';
-        $price = isset($_GET['price']) ? $_GET['price'] : '';
-        $jenis_list = isset($_GET['jenis_list']) ? $_GET['jenis_list'] : '';
-        $jenis_properti = isset($_GET['jenis_properti']) ? $_GET['jenis_properti'] : '';
-        $kamar_tidur = isset($_GET['kamar_tidur']) ? $_GET['kamar_tidur'] : '';
-        $kamar_mandi = isset($_GET['kamar_mandi']) ? $_GET['kamar_mandi'] : '';
-        $tipe_unit = isset($_GET['tipe_unit']) ? $_GET['tipe_unit'] : '';
-        $luas_bangunan = isset($_GET['luas_bangunan']) ? $_GET['luas_bangunan'] : '';
-        $luas_tanah = isset($_GET['luas_tanah']) ? $_GET['luas_tanah'] : '';
-        $arah_properti = isset($_GET['arah_properti']) ? $_GET['arah_properti'] : '';
-        $min_price = isset($_GET['min_price']) && $_GET['min_price'] != '' ? $_GET['min_price'] : 0;
-        $max_price = isset($_GET['max_price']) && $_GET['max_price'] != '' ? $_GET['max_price'] : 999999999999999;
+        $max_price = isset($_GET['max_price']) && $_GET['max_price'] != '' ? $_GET['max_price'] : 999999999999;
         $mlistings = mlisting::leftjoin('images', 'mlistings.id', '=', 'mlisting_id')
                 ->selectRaw("mlistings.id as listid,mlistings.nama,jenis_list,price,commission,nama_pemilik,no_pemilik,tipe_unit,total_unit,available_unit,jenis_properti,luas_bangunan,luas_tanah,tinggi,lantai,lokasi,kamar_mandi,kamar_tidur,arah_properti,spesifikasi,kota,listrik,legalitas,user_id,mdeveloper_id,mlistings.created_at,min(imageid) imageid,mlisting_id")
                 ->Where("mlistings.sold","=",0)
@@ -94,9 +48,50 @@ class WelcomeController extends Controller {
                 // ->orWhereNull("mlistings.luas_tanah")
                 ->Where("mlistings.arah_properti", "like", $arah_properti != '' ? $arah_properti : '%')
                 // ->orWhereNull("mlistings.arah_properti")
-                ->Where("mlistings.tipe_unit", "like", $tipe_unit != '' ? $tipe_unit : '%')
-                // ->orWhereNull("mlistings.tipe_unit")
+                ->orderby("mlistings.id","desc")
+                ->groupBy("mlistings.id")
+                ->get()
+        ;
+        $mlistings2 = mlisting::all()->first();
+        $listing1 = image::all()
+                ->where("mlisting_id", "=", isset($mlistings2->id) ? $mlistings2->id : 0 )
+        ;
+        return view('welcome', compact('mlistings', 'listing1', 'kota', 'price', 'jenis_list', 'jenis_properti', 'kamar_tidur', 'kamar_mandi', 'luas_bangunan', 'luas_tanah', 'arah_properti'));
+    }
+
+    public function properti() {
+        $kota = isset($_GET['kota']) ? $_GET['kota'] : '';
+        $price = isset($_GET['price']) ? $_GET['price'] : '';
+        $jenis_list = isset($_GET['jenis_list']) ? $_GET['jenis_list'] : '';
+        $jenis_properti = isset($_GET['jenis_properti']) ? $_GET['jenis_properti'] : '';
+        $kamar_tidur = isset($_GET['kamar_tidur']) ? $_GET['kamar_tidur'] : '';
+        $kamar_mandi = isset($_GET['kamar_mandi']) ? $_GET['kamar_mandi'] : '';
+        $luas_bangunan = isset($_GET['luas_bangunan']) ? $_GET['luas_bangunan'] : '';
+        $luas_tanah = isset($_GET['luas_tanah']) ? $_GET['luas_tanah'] : '';
+        $arah_properti = isset($_GET['arah_properti']) ? $_GET['arah_properti'] : '';
+        $min_price = isset($_GET['min_price']) && $_GET['min_price'] != '' ? $_GET['min_price'] : 0;
+        $max_price = isset($_GET['max_price']) && $_GET['max_price'] != '' ? $_GET['max_price'] : 999999999999;
+        $mlistings = mlisting::leftjoin('images', 'mlistings.id', '=', 'mlisting_id')
+                ->selectRaw("mlistings.id as listid,mlistings.nama,jenis_list,price,commission,nama_pemilik,no_pemilik,tipe_unit,total_unit,available_unit,jenis_properti,luas_bangunan,luas_tanah,tinggi,lantai,lokasi,kamar_mandi,kamar_tidur,arah_properti,spesifikasi,kota,listrik,legalitas,user_id,mdeveloper_id,mlistings.created_at,min(imageid) imageid,mlisting_id")
+                ->Where("mlistings.sold","=",0)
+                ->Where("mlistings.delet","=",0)
                 ->Where("mlistings.kota", "like", $kota != '' ? $kota : '%')
+                // ->orWhereNull("mlistings.kota")
+                ->whereBetween("mlistings.price", [$min_price, $max_price])
+                ->Where("mlistings.jenis_list", "like", $jenis_list != '' ? $jenis_list : '%')
+                // ->orWhereNull("mlistings.jenis_list")
+                ->Where("mlistings.jenis_properti", "like", $jenis_properti != '' ? $jenis_properti : '%')
+                // ->orWhereNull("mlistings.jenis_properti")
+                ->Where("mlistings.kamar_tidur", "like", $kamar_tidur != '' ? $kamar_tidur : '%')
+                // ->orWhereNull("mlistings.kamar_tidur")
+                ->Where("mlistings.kamar_mandi", "like", $kamar_mandi != '' ? $kamar_mandi : '%')
+                // ->orWhereNull("mlistings.kamar_mandi")
+                // ->Where("mlistings.luas_bangunan", "like", $luas_bangunan != '' ? $luas_bangunan : '%')
+                // ->orWhereNull("mlistings.luas_bangunan")
+                // ->Where("mlistings.luas_tanah", "like", $luas_tanah != '' ? $luas_tanah : '%')
+                // ->orWhereNull("mlistings.luas_tanah")
+                ->Where("mlistings.arah_properti", "like", $arah_properti != '' ? $arah_properti : '%')
+                // ->orWhereNull("mlistings.arah_properti")
                 ->orderby("mlistings.id","desc")
                 ->groupBy("mlistings.id")
                 ->get()
@@ -126,8 +121,15 @@ class WelcomeController extends Controller {
                 ->where("mlisting_id", "=", $id)
         ;
 
+        $kontak = User::leftjoin('mlistings','users.id','=','user_id')
+        ->selectraw("users.name,telp1,telp2")
+        ->groupBy("users.id")
+        ->where("mlistings.id", "=", $id)
+        ->first()
+        ;
+
         // dd($listing1);
-        return view('propertishow', compact('mlistings', 'listing1', 'listing2'));
+        return view('propertishow', compact('mlistings', 'listing1', 'listing2','kontak'));
     }
 
     public function artikel() {

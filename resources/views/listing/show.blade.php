@@ -239,7 +239,23 @@ Exarweb
                                 <td>{{$mlistings->sold == '0' ? 'Ready' : 'Sold'}}</td>
                             </tr> --}}
 
+                        </table><br><br>
+
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Hubungi Marketing</th>
+                                <td style="color:#000000  !important">{{$kontak->name}}</td>
+                            </tr>
+                            <tr>
+                                <th>Telpon</th>
+                                <td style="color:#000000  !important">{{$kontak->telp1}}</td>
+                            </tr>
+                            <tr>
+                                <th>WhatsApp</th>
+                                <td style="color:#000000  !important">{{$kontak->telp2}}</td>
+                            </tr>
                         </table>
+
                         <div class="row">
                             <div class="col-md-12">
                                 {{-- Tombol --}}

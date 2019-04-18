@@ -76,8 +76,16 @@ class ListingController extends Controller {
 
         $user = User::all();
 
-        // dd($listing1);
-        return view('listing.show', compact('mlistings', 'listing1', 'listing2', 'user'));
+        $kontak = User::leftjoin('mlistings','users.id','=','user_id')
+        ->selectraw("users.name,telp1,telp2")
+        ->groupBy("users.id")
+        ->where("mlistings.id", "=", $id)
+        ->first()
+        ;
+
+    
+        // dd($kontak)->toarray();
+        return view('listing.show', compact('mlistings', 'listing1', 'listing2', 'user','kontak'));
     }
 
     public function tambah_listing() {

@@ -228,7 +228,7 @@
                                 <div class="realtor">
                                     <div class="realtor_image"><img src="{{ asset('bluesky/images/realtor_1.jpg') }}" alt=""></div>
                                     <div class="realtor_body">
-                                        <div class="realtor_title">Christian Bonafena</div>
+                                        <div class="realtor_title">Miranda</div>
                                         <div class="realtor_subtitle">Executive senior marketing</div>
                                     </div>
                                     <div class="realtor_link"><a href="#">+</a></div>
@@ -245,7 +245,7 @@
                                 <div class="realtor">
                                     <div class="realtor_image"><img src="{{ asset('bluesky/images/realtor_2.jpg') }}" alt=""></div>
                                     <div class="realtor_body">
-                                        <div class="realtor_title">Dimas K</div>
+                                        <div class="realtor_title">Benjamin Black</div>
                                         <div class="realtor_subtitle">Senior Marketing</div>
                                     </div>
                                     <div class="realtor_link"><a href="#">+</a></div>
@@ -262,7 +262,7 @@
                                 <div class="realtor">
                                     <div class="realtor_image"><img src="{{ asset('bluesky/images/realtor_3.jpg') }}" alt=""></div>
                                     <div class="realtor_body">
-                                        <div class="realtor_title">Budi Wijaya</div>
+                                        <div class="realtor_title">Harvey Stanson</div>
                                         <div class="realtor_subtitle">Senior Marketing</div>
                                     </div>
                                     <div class="realtor_link"><a href="#">+</a></div>
@@ -279,7 +279,7 @@
                                 <div class="realtor">
                                     <div class="realtor_image"><img src="{{ asset('bluesky/images/realtor_4.jpg') }}" alt=""></div>
                                     <div class="realtor_body">
-                                        <div class="realtor_title">Joshua Ronaldi</div>
+                                        <div class="realtor_title">Julia Raylene</div>
                                         <div class="realtor_subtitle">Marketing</div>
                                     </div>
                                     <div class="realtor_link"><a href="#">+</a></div>
@@ -312,18 +312,18 @@
                         <div class="row">
                             <div class="col-lg-3 footer_col">
                                 <div class="footer_about">
-                                    <div class="footer_about_text">Tempat cari properti terbaik di Indonesia. Bergabunglah dengan sejuta agen sukses lainnya di exari</div>
+                                        <div class="footer_about_text">Tempat cari properti terbaik di Indonesia. Bergabunglah dengan tim marketing sukses kami lainnya di exari.</div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 footer_col">
-                                <div class="footer_about">
-                                    <div class="footer_about_text">
-                                        Alamat  : Wiyung, Taman Pondok Indah  <br/>
-                                        No Telp : 0822 3385 7510<br/>
-                                        WA      : 0822 3385 7510<br/>
-                                    </div>
+                                <div class="col-lg-3 footer_col">
+                                        <div class="footer_about">
+                                            <div class="footer_about_text">
+                                                    Alamat  : Wiyung, Taman Pondok Indah  <br/>
+                                                    No Telp : 0822 3385 7510<br/>
+                                                    WA      : 0822 3385 7510<br/>
+                                            </div>
+                                        </div>
                                 </div>
-                            </div>
                             <div class="col-lg-3 footer_col">
                                 
                             </div>

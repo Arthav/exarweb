@@ -192,18 +192,18 @@
                         <div class="row">
                             <div class="col-lg-3 footer_col">
                                 <div class="footer_about">
-                                    <div class="footer_about_text">Tempat cari properti terbaik di Indonesia. Bergabunglah dengan sejuta agen sukses lainnya di exari</div>
+                                        <div class="footer_about_text">Tempat cari properti terbaik di Indonesia. Bergabunglah dengan tim marketing sukses kami lainnya di exari.</div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 footer_col">
-                                <div class="footer_about">
-                                    <div class="footer_about_text">
-                                        Alamat  : Wiyung, Taman Pondok Indah  <br/>
-                                        No Telp : 0822 3385 7510<br/>
-                                        WA      : 0822 3385 7510<br/>
-                                    </div>
+                                <div class="col-lg-3 footer_col">
+                                        <div class="footer_about">
+                                            <div class="footer_about_text">
+                                                    Alamat  : Wiyung, Taman Pondok Indah  <br/>
+                                                    No Telp : 0822 3385 7510<br/>
+                                                    WA      : 0822 3385 7510<br/>
+                                            </div>
+                                        </div>
                                 </div>
-                            </div>
                             <div class="col-lg-3 footer_col">
                                 
                             </div>

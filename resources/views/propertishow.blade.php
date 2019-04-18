@@ -268,6 +268,21 @@
                                     <th>Sold</th>
                                     <td>{{$mlistings->sold == 0 ? 'Ready' : 'Sold'}}</td>
                                  </tr> --}}
+                              </table><br><br>
+
+                              <table class="table table-bordered">
+                                  <tr>
+                                      <th>Hubungi Marketing</th>
+                                      <td style="color:#000000  !important">{{$kontak->name}}</td>
+                                  </tr>
+                                  <tr>
+                                      <th>Telpon</th>
+                                      <td style="color:#000000  !important">{{$kontak->telp1}}</td>
+                                  </tr>
+                                  <tr>
+                                      <th>WhatsApp</th>
+                                      <td style="color:#000000  !important">{{$kontak->telp2}}</td>
+                                  </tr>
                               </table>
                            </div>
                         </div>
@@ -284,20 +299,24 @@
                         <div class="logo"><a href="#"><img src="{{ asset('bluesky/images/logo_exari.png') }}" alt=""></a></div>
                      </div>
                      <div class="col-lg-9 d-flex flex-column align-items-start justify-content-end">
-                        <div class="footer_title">Latest Properties</div>
+                       
                      </div>
                   </div>
                   <div class="row">
                      <div class="col-lg-3 footer_col">
                         <div class="footer_about">
-                           <div class="footer_about_text">Donec in tempus leo. Aenean ultricies mauris sed quam lacinia lobortis. Cras ut vestibulum enim, in gravida nulla. Curab itur ornare nisl at sagittis cursus.</div>
+                              <div class="footer_about_text">Tempat cari properti terbaik di Indonesia. Bergabunglah dengan tim marketing sukses kami lainnya di exari.</div>
                         </div>
-                     </div>
-                     <div class="col-lg-3 footer_col">
-                        <div class="footer_about">
-                           <div class="footer_about_text">                                        Alamat : <br/>                                        No Telp : <br/>                                        WA : <br/></div>
+                    </div>
+                        <div class="col-lg-3 footer_col">
+                              <div class="footer_about">
+                                    <div class="footer_about_text">
+                                          Alamat  : Wiyung, Taman Pondok Indah  <br/>
+                                          No Telp : 0822 3385 7510<br/>
+                                          WA      : 0822 3385 7510<br/>
+                                    </div>
+                              </div>
                         </div>
-                     </div>
                      <div class="col-lg-3 footer_col"></div>
                      <div class="col-lg-3 footer_col"></div>
                   </div>
