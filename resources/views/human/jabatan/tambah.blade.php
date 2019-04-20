@@ -48,7 +48,7 @@ Tambah Jabatan Baru
   </p>
 
 
-    <input type="submit" class="w3-button w3-red w3-round-large" name="submit" value="Add New Member">
+    <input type="submit" class="w3-button w3-red w3-round-large" name="submit" value="Tambah Jabatan">
     {{ csrf_field() }}
   </form>
 

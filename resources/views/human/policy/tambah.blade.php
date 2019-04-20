@@ -79,7 +79,7 @@ Tambah Kebijakan Baru
     
 
 
-    <input type="submit" class="w3-button w3-red w3-round-large" name="submit" value="Add New Policy">
+    <input type="submit" class="w3-button w3-red w3-round-large" name="submit" value="Tambah Kebijakan">
     {{ csrf_field() }}
   </form>
 

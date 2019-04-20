@@ -94,7 +94,7 @@ Daftar User Baru
                 <input class="w3-input" name="password" type="password"></p>
 
 
-            <input type="submit" class="w3-button w3-red w3-round-large" name="submit" value="Add New Member">
+            <input type="submit" class="w3-button w3-red w3-round-large" name="submit" value="Tambah User">
             {{ csrf_field() }}
         </form>
 

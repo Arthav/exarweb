@@ -206,7 +206,7 @@
                     <div class="row recent_row">
                         <div class="col">
                             <div class="recent_slider_container">
-                                <div class="owl-carousel owl-theme recent_slider">
+                                <div class="owl-carousel owl-theme recent_slider"> 
                                     @foreach($mlistings as $list)
 
                                     <!-- Slide -->
