@@ -32,22 +32,12 @@ class ListingController extends Controller {
                 ->Where("mlistings.sold","=",0)
                 ->Where("mlistings.delet","=",0)
                 ->Where("mlistings.kota", "like", $kota != '' ? $kota : '%')
-                // ->orWhereNull("mlistings.kota")
                 ->whereBetween("mlistings.price", [$min_price, $max_price])
                 ->Where("mlistings.jenis_list", "like", $jenis_list != '' ? $jenis_list : '%')
-                // ->orWhereNull("mlistings.jenis_list")
                 ->Where("mlistings.jenis_properti", "like", $jenis_properti != '' ? $jenis_properti : '%')
-                // ->orWhereNull("mlistings.jenis_properti")
                 ->Where("mlistings.kamar_tidur", "like", $kamar_tidur != '' ? $kamar_tidur : '%')
-                // ->orWhereNull("mlistings.kamar_tidur")
                 ->Where("mlistings.kamar_mandi", "like", $kamar_mandi != '' ? $kamar_mandi : '%')
-                // ->orWhereNull("mlistings.kamar_mandi")
-                // ->Where("mlistings.luas_bangunan", "like", $luas_bangunan != '' ? $luas_bangunan : '%')
-                // ->orWhereNull("mlistings.luas_bangunan")
-                // ->Where("mlistings.luas_tanah", "like", $luas_tanah != '' ? $luas_tanah : '%')
-                // ->orWhereNull("mlistings.luas_tanah")
                 ->Where("mlistings.arah_properti", "like", $arah_properti != '' ? $arah_properti : '%')
-                // ->orWhereNull("mlistings.arah_properti")
                 ->orderby("mlistings.id","desc")
                 ->groupBy("mlistings.id")
                 ->get()
@@ -82,7 +72,6 @@ class ListingController extends Controller {
         ->where("mlistings.id", "=", $id)
         ->first()
         ;
-
     
         // dd($kontak)->toarray();
         return view('listing.show', compact('mlistings', 'listing1', 'listing2', 'user','kontak'));
