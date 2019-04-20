@@ -153,8 +153,8 @@
                                             <div>
                                                 <select class="search_form_select" name="jenis_list">
                                                     <option disabled selected>Jenis List</option>
-                                                    <option value="Jual">Jual</option>
-                                                    <option value="Sewa">Sewa</option>
+                                                    <option value="Dijual">Dijual</option>
+                                                    <option value="Disewakan">Disewakan</option>
                                                 </select>
                                             </div>
                                             <div>
