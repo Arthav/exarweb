@@ -26,7 +26,7 @@
                         <div class="col">
                             <div class="header_content d-flex flex-row align-items-center justify-content-start">
                                 <div class="logo">
-                                    <a href="#"><img src="{{ asset('bluesky/images/logo_exari.png') }}" alt=""></a>
+                                    <a href="#"><img src="{{ asset('bluesky/images/exaricorner.jpg') }}" alt="" ></a>
                                 </div>
                                 <nav class="main_nav">
                                     <ul>
@@ -75,7 +75,7 @@
                     <div class="logo menu_logo">
                         <a href="#">
                             <div class="logo_container d-flex flex-row align-items-start justify-content-start">
-                                <div class="logo_image"><div><img src="{{ asset('bluesky/images/logo_exari.png') }}" alt=""></div></div>
+                                <div class="logo_image"><div><img src="{{ asset('bluesky/images/exaricorner.jpg') }}" alt=""></div></div>
                             </div>
                         </a>
                     </div>
@@ -360,7 +360,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-3">
-                                <div class="logo"><a href="#"><img src="{{ asset('bluesky/images/logo_exari.png') }}" alt=""></a></div>
+                                <div class="logo"><a href="#"><img src="{{ asset('bluesky/images/exaricorner.jpg') }}" alt=""></a></div>
                             </div>
                             <div class="col-lg-9 d-flex flex-column align-items-start justify-content-end">
                                 

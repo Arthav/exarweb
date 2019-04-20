@@ -26,7 +26,7 @@
                         <div class="col">
                             <div class="header_content d-flex flex-row align-items-center justify-content-start">
                                 <div class="logo">
-                                    <a href="#"><img src="{{ asset('bluesky/images/logo_exari.png') }}" alt=""></a>
+                                    <a href="#"><img src="{{ asset('bluesky/images/exaricorner.jpg') }}" alt=""></a>
                                 </div>
                                 <nav class="main_nav">
                                     <ul>

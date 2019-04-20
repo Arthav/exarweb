@@ -24,7 +24,7 @@
                         <div class="col">
                             <div class="header_content d-flex flex-row align-items-center justify-content-start">
                                 <div class="logo">
-                                    <a href="#"><img src="{{ asset('bluesky/images/logo_exari.png') }}" alt=""></a>
+                                    <a href="#"><img src="{{ asset('bluesky/images/exaricorner.jpg') }}" alt=""></a>
                                 </div>
                                 <nav class="main_nav">
                                     <ul>
@@ -73,7 +73,7 @@
                     <div class="logo menu_logo">
                         <a href="#">
                             <div class="logo_container d-flex flex-row align-items-start justify-content-start">
-                                <div class="logo_image"><div><img src="{{ asset('bluesky/images/logo_exari.png') }}" alt=""></div></div>
+                                <div class="logo_image"><div><img src="{{ asset('bluesky/images/exaricorner.jpg') }}" alt=""></div></div>
                             </div>
                         </a>
                     </div>
@@ -138,10 +138,11 @@
             <div class="contact">
                 <div class="container">
                     <div class="row">
-
+                        <div><b><font size="5">Exari</font></b></div>
+                        
                         <!-- Contact Info -->
                         <div class="col-lg-4">
-                            
+                              
                         </div>
 
                         <!-- Contact Form -->
@@ -149,6 +150,13 @@
                             
                         </div>
                     </div>
+                    <div>PT. Exarlab</div>
+                    <div>www.Exarlab.com</div><br>
+                    <li>Alamat: Taman Pondok Indah</li>
+                    <li>Kota: Surabaya</li>
+                    <li>Contact Person: Christian Bonafena</li>
+                    <li>Phone:0822 3385 7510</li>
+                    <li>E-mail: Christianbonafena7@gmail.com</li>
                 </div>
             </div>
 
@@ -157,7 +165,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-3">
-                                <div class="logo"><a href="#"><img src="{{ asset('bluesky/images/logo_exari.png') }}" alt=""></a></div>
+                                <div class="logo"><a href="#"><img src="{{ asset('bluesky/images/exaricorner.jpg') }}" alt=""></a></div>
                             </div>
                         </div>
                         <div class="row">
