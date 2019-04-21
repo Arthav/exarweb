@@ -87,7 +87,8 @@
                         <li class="menu_item"><a href="{{ route('Home.Kontak') }}">Contact</a></li>
                         @if (Route::has('login'))
                         @auth
-                        <li class="menu_item">
+                        <li><a href="{{ route('Listing_Default') }}">Agent Home</a></li>
+                        {{-- <li class="menu_item">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">
@@ -97,7 +98,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
-                        </li>
+                        </li> --}}
                         @else
                         <li class="menu_item">
                             <a href="{{ route('login') }}">Login</a>
