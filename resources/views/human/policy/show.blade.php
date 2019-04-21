@@ -117,6 +117,8 @@ Detail Policy
                   <div class="w3-section">
                     
                     <!-- POP UP DELETE -->
+                    @if()
+                    @endif
                     <div style="color:black">
                       <h3>Apakah anda yakin untuk menghapus {{ $bijaks->nama }}?</h3>
                     </div>

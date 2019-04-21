@@ -133,11 +133,11 @@ Property list
                     <div class="agenproperti-info">{{$list->lokasi}} <br/>
                         Lt/Lb : {{$list->luas_tanah}} / {{$list->luas_bangunan}}<br/></div>
                     <a href="{{ route('Listing.Show', ['id' => $list->listid]) }}" class="btn" >Lihat &raquo;</a>
+               
                 </div>
-
             </div>
         </div>
-
+        
         @endforeach
 
     </div>

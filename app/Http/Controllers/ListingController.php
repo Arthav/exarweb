@@ -299,7 +299,7 @@ class ListingController extends Controller {
         ;
        
 
-        return view('listing.Sold', compact('mlistings', 'kota', 'price', 'jenis_list', 'jenis_properti', 'kamar_tidur', 'kamar_mandi', 'luas_bangunan', 'luas_tanah', 'arah_properti', 'tipe_unit','min_price','max_price'));
+        return view('listing.sold', compact('mlistings', 'kota', 'price', 'jenis_list', 'jenis_properti', 'kamar_tidur', 'kamar_mandi', 'luas_bangunan', 'luas_tanah', 'arah_properti', 'tipe_unit','min_price','max_price'));
     }
 
     public function mylisting() {
