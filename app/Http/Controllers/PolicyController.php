@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 //Table
 use App\Mpolicy;
+use App\Mrole;
 
 class PolicyController extends Controller
 {
@@ -63,14 +64,13 @@ class PolicyController extends Controller
 
     Public function hapus_policy(Request $request, $id)
     {
-        $jabatan = mrole::all()
-        ->where("mpolicy_id","=","$id");
-        $jabatan->mpolicy_id = '3';
-        $jabatan->save();
+        $jabatan = mrole::where('mpolicy_id','=',$id)->update(['mpolicy_id' => '3']);
+        // dd($jabatan);
 
         $mpolicy = mpolicy::find($id);
         $mpolicy->delete = '1' ;
         $mpolicy->save();
+        // dd($mpolicy);
         
         return redirect()->route('Human.Policy');
 

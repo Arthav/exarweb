@@ -133,7 +133,7 @@ Data Agen
                     
                     <!-- POP UP DELETE -->
                     <div style="color:black">
-                      <h3>Apakah anda yakin untuk menghapus data agen {{ $agen->name }}?</h3>
+                      <h3>Apakah anda yakin untuk menghapus data user {{ $agen->name }}? Menghapus data agen juga akan menghapus listing yang dibuat oleh user ini</h3>
                     </div>
                     <input class="w3-button w3-block w3-red w3-section w3-padding" type="submit" value="Delete"></input>
                     {{ csrf_field() }}

@@ -86,7 +86,7 @@ class AgenController extends Controller
 
     Public function hapus_agen(Request $request, $id)
     {
-       
+        $listing_hapus = mlisting::where('user_id','=',$id)->update(['delet' => '1']);
 
         $user = user::find($id);
         $user->delet = '1' ;

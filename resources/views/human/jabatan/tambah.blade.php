@@ -29,7 +29,7 @@ Tambah Jabatan Baru
     <p>
     <label>Level otoritas</label>
     <select class="w3-select w3-border" name="level">
-      <option value="" disabled selected>Agama</option>
+      <option value="" disabled selected>Level</option>
       <option value="1">1 : Admin dan Manager</option>
       <option value="2">2 : Agen</option>
     </select>

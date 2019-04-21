@@ -39,11 +39,11 @@ Daftar User Baru
                 <input class="w3-input" name="nik" type="text"></p>
 
             <p>
-                <label>Telepon 1</label>
+                <label>Nomor Telpon</label>
                 <input class="w3-input" name="telp1" type="text"></p>
 
             <p>
-                <label>Telepon 2</label>
+                <label>Whatsapp</label>
                 <input class="w3-input" name="telp2" type="text"></p>
 
             <p>
