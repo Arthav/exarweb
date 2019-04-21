@@ -63,7 +63,10 @@ class PolicyController extends Controller
 
     Public function hapus_policy(Request $request, $id)
     {
-        
+        $jabatan = mrole::all()
+        ->where("mpolicy_id","=","$id");
+        $jabatan->mpolicy_id = '3';
+        $jabatan->save();
 
         $mpolicy = mpolicy::find($id);
         $mpolicy->delete = '1' ;

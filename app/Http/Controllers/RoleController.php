@@ -64,6 +64,11 @@ class RoleController extends Controller
 
     Public function hapus_jabatan(Request $request, $id)
     {      
+        $agen = user::all()
+        ->where("mrole_id","=","$id");
+        $agen->mrole_id = '3';
+        $agen->save();
+
         $mrole = mrole::find($id);
         $mrole->delet = '1' ;
         $mrole->save();

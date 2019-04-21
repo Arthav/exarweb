@@ -33,26 +33,27 @@ Detail Policy
 @section('content2')
 
 <body onload="openDkaryawan(event, 'Data_pribadi');">
-	  <div class="w3-row">
-		<a href="javascript:void(0)" onclick="openDkaryawan(event, 'Data_pribadi');">
-		  <div style="color:#ffffff !important" class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Policy</div>
-		</a>             
-	  </div>
+	 
     <!-- Section 2 -->
       <div class="w3-container  w3-blue-gray w3-padding-32">
         <!--Awal bagian container-->
         <div class="W3-container">
 
           <!-- tabulasi -->
-
+          <div class="w3-row">
+              <a href="javascript:void(0)" onclick="openDkaryawan(event, 'Data_pribadi');">
+                <div style="color:#ffffff !important" class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Policy</div>
+              </a>             
+              </div>
           
           <!-- Akhir tabulasi -->
           
           <!-- isi tabs data jabatan -->
           <div id="Data_pribadi" class="w3-container tabsdkaryawan" style="display:none">
-          <h2>Data Jabatan: {{$bijaks->name}}</h2>
+          <h2>Data Kebijakan: {{$bijaks->name}}</h2>
 
             <!-- Awal padding -->
+
             <div class="row">
 				<div class="col-md-12">
 					<table class="table table-bordered>">
@@ -113,12 +114,11 @@ Detail Policy
                 </div>
 
                 <!--awal form HAPUS Jabatan-->
+                @if($bijaks->id > 3)
                 <form class="w3-container" action="{{ route('Human.Policy.Hapus',['id' => $bijaks->id]) }}" method="post">
                   <div class="w3-section">
                     
-                    <!-- POP UP DELETE -->
-                    @if()
-                    @endif
+                    <!-- POP UP DELETE -->                                      
                     <div style="color:black">
                       <h3>Apakah anda yakin untuk menghapus {{ $bijaks->nama }}?</h3>
                     </div>
@@ -126,6 +126,12 @@ Detail Policy
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">
                   </form>
+                  @else
+                  <div style="color:black">
+                      <h3>Maaf anda tidak dapat menghapus kebijakan {{ $bijaks->nama }}</h3>
+                  </div>
+               
+                  @endif
                   <!--akhir form HAPUS Jabatan-->
                   
                   <!--tombol cancel HAPUS Jabatan-->

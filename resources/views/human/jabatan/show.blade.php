@@ -53,42 +53,40 @@ Data Jabatan
           <h2>Data Jabatan: {{$jabats->name}}</h2>
 
             <!-- Awal padding -->
-            <div class="w3-row-padding">
-              <!-- LABEL DATA PRIBADI-->
-              <div class="w3-third">
-                <p><b>ID </b></p>
-                <p><b>Nama Jabatan</b></p>
-                <p><b>Level Otoritas</b></p>
-                <p><b>Kebijakan</b></p>
-                <div style="color:#0099ff">
-          <br><br><br>
+            
+
+            <div class="row">
+                <div class="col-md-12">
+                  <table class="table table-bordered>">
+                      <tr>
+                        <th>ID</th>
+                        <td>{{$jabats->id}}</td>
+                      </tr>
+                      <tr>
+                        <th>Nama Jabatan</th>
+                        <td>{{$jabats->nama}}</td>
+                      </tr>
+                      <tr>
+                        <th>Level Otoritas</th>
+                        <td>{{$jabats->level}}</td>
+                      </tr>
+                      <tr>
+                        <th>Kebijakan</th>
+                        <td>{{$jabats->mpolicy['nama']}}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+            <!-- Akhir padding -->
+            <div class="row">
+                <div class="col-md-6">
+                  <button onclick="document.getElementById('edit01').style.display='block'" class="btn btn-success btn-large btn-block">Edit</button>
+                </div>
+                <div class="col-md-6">
+                  <button onclick="document.getElementById('hapus01').style.display='block'" class="btn btn-danger btn-block">Hapus</button>
                 </div>
               </div>
-
-              <!-- q1 -->
-              <!-- LABEL DATA Jabatan-->
-              <div class="w3-twothird">
-
-                <p><label><label style="color:#0099ff">'</label>{{$jabats->id}} </label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$jabats->nama}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$jabats->level}} </label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$jabats->mpolicy['nama']}}</label></p>
-               
-              </div>
-            </div>
-            <!-- Akhir padding -->
-            
-            <!--Tombol Edit Data jabatan-->
-            <p>
-              <button onclick="document.getElementById('edit01').style.display='block'"
-              class="w3-button w3-black w3-round-large">Edit</button></p>
-            <!--Akhir Tombol Edit-->
-
-            <!--tombol hapus jabatan-->
-            <p>
-              <button onclick="document.getElementById('hapus01').style.display='block'"
-              class="w3-button w3-red w3-round-large">Hapus</button></p>
-            <!--Akhir Tombol Hapus-->
+           
 
             <!--awal POP UP hapus Jabatan-->    
             <div id="hapus01" class="w3-modal">
@@ -100,6 +98,7 @@ Data Jabatan
                 </div>
 
                 <!--awal form HAPUS Jabatan-->
+                @if($jabats->id > 3)
                 <form class="w3-container" action="{{ route('Human.Jabatan.Hapus',['id' => $jabats->id]) }}" method="post">
                   <div class="w3-section">
                     
@@ -111,6 +110,12 @@ Data Jabatan
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">
                   </form>
+                  @else
+                  <div style="color:black">
+                      <h3>Maaf anda tidak dapat menghapus jabatan {{ $jabats->nama }}</h3>
+                  </div>
+               
+                  @endif
                   <!--akhir form HAPUS Jabatan-->
                   
                   <!--tombol cancel HAPUS Jabatan-->

@@ -53,58 +53,68 @@ Data Agen
           <h2>Data agen: {{$agen->name}}</h2>
 
             <!-- Awal padding -->
-            <div class="w3-row-padding">
-              <!-- LABEL DATA PRIBADI-->
-              <div class="w3-third">
-                <p><b>ID </b></p>
-                <p><b>Nama</b></p>
-                <p><b>Jabatan</b></p>
-                <p><b>Email</b></p>
-                <p><b>Alamat </b></p>
-                <p><b>No. Telepon 1</b></p>
-                <p><b>No. Telepon 2</b></p>                
-                <p><b>NIK</b></p>
-                <p><b>NPWP</b></p>
-                <p><b>Jenis Kelamin</b></p>
-                
-                <div style="color:#0099ff">
-          
+            
+
+            <div class="row">
+                <div class="col-md-12">
+                  <table class="table table-bordered>">
+                      <tr>
+                        <th>ID</th>
+                        <td>{{$agen->id}}</td>
+                      </tr>
+                      <tr>
+                        <th>Nama</th>
+                        <td>{{$agen->name}}</td>
+                      </tr>
+                      <tr>
+                        <th>Jabatan</th>
+                        <td>{{$agen->mrole['nama']}}</td>
+                      </tr>
+                      <tr>
+                        <th>Email</th>
+                        <td>{{$agen->email}}</td>
+                      </tr>
+                      <tr>
+                        <th>Alamat</th>
+                        <td>{{$agen->alamat}}</td>
+                      </tr>
+                      <tr>
+                        <th>Nomor Telpon</th>
+                        <td>{{$agen->telp1}}</td>
+                      </tr>
+                      <tr>
+                        <th>Whatsapp</th>
+                        <td>{{$agen->telp2}}</td>
+                      </tr>
+                      <tr>
+                        <th>NIK</th>
+                        <td>{{$agen->nik}}</td>
+                      </tr>
+                      <tr>
+                        <th>NPWP</th>
+                        <td>{{$agen->npwp}}</td>
+                      </tr>
+                      <tr>
+                        <th>Jenis Kelamin</th>
+                        <td>{{$agen->jeniskelamin}}</td>
+                      </tr>
+                      <tr>
+                        <th>Agama</th>
+                        <td>{{$agen->agama}}</td>
+                      </tr>
+                    </table>
+                  </div>
                 </div>
-                <p><b>Agama</b></p>
-                
-              </div>
-
-              <!-- q1 -->
-              <!-- LABEL DATA PRIBADI-->
-              <div class="w3-twothird">
-
-                <p><label><label style="color:#0099ff">'</label>{{$agen->id}} </label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen->name}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen->mrole['nama']}} </label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen->email}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen->alamat}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen->telp1}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen->telp2}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen->nik}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen->npwp}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen->jeniskelamin}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen->agama}}</label></p>
-
-              </div>
-            </div>
             <!-- Akhir padding -->
             
-            <!--Tombol Edit Data Pribadi Karyawan-->
-            <p>
-              <button onclick="document.getElementById('edit01').style.display='block'"
-              class="w3-button w3-black w3-round-large">Edit</button></p>
-            <!--Akhir Tombol Edit-->
-
-            <!--tombol hapus Karyawan-->
-            <p>
-              <button onclick="document.getElementById('hapus01').style.display='block'"
-              class="w3-button w3-red w3-round-large">Hapus</button></p>
-            <!--Akhir Tombol Hapus-->
+            <div class="row">
+                <div class="col-md-6">
+                  <button onclick="document.getElementById('edit01').style.display='block'" class="btn btn-success btn-large btn-block">Edit</button>
+                </div>
+                <div class="col-md-6">
+                  <button onclick="document.getElementById('hapus01').style.display='block'" class="btn btn-danger btn-block">Hapus</button>
+                </div>
+              </div>
 
             <!--awal POP UP hapus agen-->    
             <div id="hapus01" class="w3-modal">
@@ -116,17 +126,25 @@ Data Agen
                 </div>
 
                 <!--awal form HAPUS agen-->
+                @if($agen->id > 3)
+                
                 <form class="w3-container" action="{{ route('Human.Agen.Hapus',['id' => $agen->id]) }}" method="post">
                   <div class="w3-section">
                     
                     <!-- POP UP DELETE -->
                     <div style="color:black">
-                      <h3>Apakah anda yakin untuk menghapus data agen {{ $agen->nama }}?</h3>
+                      <h3>Apakah anda yakin untuk menghapus data agen {{ $agen->name }}?</h3>
                     </div>
                     <input class="w3-button w3-block w3-red w3-section w3-padding" type="submit" value="Delete"></input>
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">
                   </form>
+                  @else
+                  <div style="color:black">
+                      <h3>Maaf anda tidak dapat menghapus user {{ $agen->name }}</h3>
+                  </div>
+               
+                  @endif
                   <!--akhir form HAPUS agen-->
                   
                   <!--tombol cancel HAPUS agen-->
