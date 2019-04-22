@@ -35,9 +35,9 @@
                                         <li><a href="{{ route('Home.Properti') }}">Properties</a></li>
                                         <li><a href="{{ route('Home.Artikel') }}">News</a></li>
                                         <li><a href="{{ route('Home.Kontak') }}">Contact</a></li>
-                                        @if (Route::has('login'))
-                                        <li><a href="{{ route('Listing_Default') }}">Agent Home</a></li>
-                                        {{-- @auth
+                                        {{-- @if (Route::has('login'))
+                                        <li><a href="{{ route('Listing_Default') }}">Agent Home</a></li> --}}
+                                        @auth
                                         <li>
                                             <a class="dropdown-item" href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
@@ -48,7 +48,7 @@
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                 @csrf
                                             </form>
-                                        </li> --}}
+                                        </li>
                                         @else
                                         <li>
                                             <a href="{{ route('login') }}">Login</a>
@@ -58,7 +58,7 @@
                                             <li><a href="{{ route('register') }}">Register</a></li>
                                         @endif --}}
                                         @endauth
-                                        @endif
+                                        {{-- @endif --}}
                                     </ul>
                                 </nav>
                                 <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
