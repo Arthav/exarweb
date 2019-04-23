@@ -83,17 +83,23 @@ Laporan Komisi
                 <div class="w3-responsive" style=color:black>
                     <table class="w3-table-all">
                         <tr>
-                          
+                            <th>Nama agen</th>
+                            <th>Jumlah Penjualan</th>
                             <th>Komisi Saya</th>
+                            <th>Potongan Co-Broking</th>
+                            <th>Komisi Co-Broking</th>
                             <th>Potongan Pajak</th>
                             <th>Komisi Akhir Saya</th>
                         </tr>
                         @foreach($overview as $over)
                         <tr>
-                           
+                            <td>{{$over->name}}</td>
+                            <td>{{$over->ListSold}}</td>
                             <td>Rp.{{$over->KomisiBersih}}</td>
-                            <td>Rp.{{$over->Pajak}}</td>
-                            <td>Rp.{{$over->komisiakir}}</td>                       
+                            <td>Rp.{{$over->potongan}}</td>
+                            <td>Rp.{{$over->tambahan}}</td>
+                            <td>Rp.{{$over->pajak}}</td>
+                            <td>Rp.{{$over->komisiAkir}}</td>                       
                         </tr>
                         @endforeach
 
@@ -117,10 +123,6 @@ Laporan Komisi
                         });
                     });
                 </script>
-
-                <!-- detail halaman -->
-                <h7> {{$overview->total() }} total data</h7>
-                <p><h8>In this page : ({{$overview->count()}}) </h8></p>
 
 
             </div>

@@ -34,6 +34,7 @@ public function Mrole()
     return $this->belongsTo('App\Mrole','mrole_id');
 }
 
+
 public function scopeSearch($query, $s)
 {
     return $query->where('name', 'like', '%' .$s.'%')

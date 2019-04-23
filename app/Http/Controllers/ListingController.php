@@ -63,8 +63,9 @@ class ListingController extends Controller {
         $listing2 = image::all()
                 ->where("mlisting_id", "=", $id)
         ;
-
-        $user = User::all();
+        $para=auth::user()->id;
+        $user = User::all()
+        ->where('id','<>',$para);
 
         $kontak = User::leftjoin('mlistings','users.id','=','user_id')
         ->selectraw("users.name,telp1,telp2")

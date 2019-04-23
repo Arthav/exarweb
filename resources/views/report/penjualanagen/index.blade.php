@@ -91,6 +91,8 @@ Laporan Listing Properti
                             <th>Nama agen</th>
                             <th>Jumlah Penjualan</th>
                             <th>Komisi Marketing</th>
+                            <th>Potongan Co-Broking</th>
+                            <th>Komisi Co-Broking</th>
                             <th>Potongan Pajak</th>
                             <th>Komisi Akhir Marketing</th>
                         </tr>
@@ -99,8 +101,10 @@ Laporan Listing Properti
                             <td>{{$over->name}}</td>
                             <td>{{$over->ListSold}}</td>
                             <td>Rp.{{$over->KomisiBersih}}</td>
-                            <td>Rp.{{$over->Pajak}}</td>
-                            <td>Rp.{{$over->komisiakir}}</td>                       
+                            <td>Rp.{{$over->potongan}}</td>
+                            <td>Rp.{{$over->tambahan}}</td>
+                            <td>Rp.{{$over->pajak}}</td>
+                            <td>Rp.{{$over->komisiAkir}}</td>                       
                         </tr>
                         @endforeach
 
@@ -126,11 +130,9 @@ Laporan Listing Properti
                 </script>
 
                 {{-- Tombol Download --}}
-                <a href="{{ route('Report.Overview.Download',['bulan'=>$bulan],['tahun'=>$tahun]) }}"class="w3-button w3-green w3-round-large">Export all data to excel</a></p>
+                {{-- <a href="{{ route('Report.Overview.Download',['bulan'=>$bulan],['tahun'=>$tahun]) }}"class="w3-button w3-green w3-round-large">Export all data to excel</a></p> --}}
 
-                <!-- detail halaman -->
-                <h7> {{$overview->total() }} total data</h7>
-                <p><h8>In this page : ({{$overview->count()}}) </h8></p>
+               
 
 
             </div>

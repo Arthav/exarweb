@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mtransaction extends Model
 {
-    public function User()
+    public function Mlisting()
 {
-    return $this->belongsTo('App\User','user_id');
+    return $this->belongsTo('App\Mlisting','mlisting_id');
 }
 
 
