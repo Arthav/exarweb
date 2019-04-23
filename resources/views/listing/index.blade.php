@@ -15,7 +15,6 @@ Property list
 
 @section('content2')
 
-
 <!-- FILTER CARI -->
 <br><br><br>
 <!-- Section 2 -->
@@ -120,7 +119,7 @@ Property list
         <!-- AKHIR FILTER NAMA -->
 
         @foreach($mlistings as $list)
-        <div class="grid-12">
+        <div class="grid-12" grid-row-gap:>
             <div class="agenproperti-thumb">
                 <div class="agenproperti-gambar">
                     {{-- <div class="ribbon best"><span>{{$list->sold == '0' ? 'Ready' : 'Secondary'}}</span></div> --}}
@@ -188,7 +187,7 @@ Property list
     #tophead{background-color:#2500fc;}
     .agenproperti-harga{color:#2500fc;}
     #catmenu a:hover {color:#2500fc;}
-
+   
 </style>
 
 

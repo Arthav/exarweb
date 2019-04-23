@@ -120,7 +120,7 @@ Sold property list
         @foreach($mlistings as $list)
         <div class="grid-12">
             <div class="agenproperti-thumb">
-                <div class="agenproperti-gambar"><div class="ribbon best"><span>{{$list->sold == '0' ? 'Ready' : 'Secondary'}}</span></div>
+                <div class="agenproperti-gambar">
                     <a href="{{ route('Listing.Show', ['id' => $list->listid]) }}">	
                         <img class="lazy" src="{{ url('/storage/mlisting/') }}/{{$list->imageid}}.jpeg" alt="{{$list->imageid}}" style="width:124px;height:100px;" />
                     </a>
