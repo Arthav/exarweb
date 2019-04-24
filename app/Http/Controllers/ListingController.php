@@ -157,8 +157,7 @@ class ListingController extends Controller {
             $img_name = Image::where('mlisting_id', $request->mlisting_id)->orderby('imageid', 'ASC')->get()->last();
 
             $nama_gambar = $img_name->imageid . '.jpeg';
-            $destination = ('/public/mlisting');
-            $request->file('ml_img')->storeAs($destination, $nama_gambar);
+            $request->file('ml_img')->storeAs('/public/mlisting', $nama_gambar);
 
             // $mlisting->gambar = $nama_gambar;
         }
