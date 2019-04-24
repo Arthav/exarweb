@@ -122,7 +122,7 @@
                     <div class="owl-carousel owl-theme home_slider">
                         <!-- Slide -->
                         <div class="owl-item">
-                            <div class="home_slider_background" style="background-image:url(bluesky/images/home_slider_1.jpg)"></div>
+                            <div class="home_slider_background" style="background-image:url(bluesky/images/slider7.jpeg)"></div>
                             <div class="slide_container">
                                 <div class="container">
                                     <div class="row">

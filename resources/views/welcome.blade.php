@@ -132,14 +132,15 @@
                     <div class="owl-carousel owl-theme home_slider">
                         <!-- Slide -->
                         <div class="owl-item">
-                            <div class="home_slider_background" style="background-image:url(bluesky/images/home_slider_1.jpg)"></div>
+                  
+                            <div class="home_slider_background" style="background-image:url(bluesky/images/slider4.jpeg)"></div>
                             <div class="slide_container">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col">
                                             <div class="slide_content">
                                                 <div class="home_subtitle">Exari</div>
-                                                <div class="home_title">Temukan Rumah Impian Anda</div>
+                                                <div class="home_title">Temukan Properti Impian Anda</div>
                                             </div>
                                         </div>
                                     </div>

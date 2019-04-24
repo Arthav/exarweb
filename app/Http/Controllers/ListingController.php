@@ -42,7 +42,7 @@ class ListingController extends Controller {
                 ->groupBy("mlistings.id")
                 ->get()
         ;
-        
+        // dd($mlistings);
         return view('listing.index', compact('mlistings', 'kota', 'price', 'jenis_list', 'jenis_properti', 'kamar_tidur', 'kamar_mandi', 'luas_bangunan', 'luas_tanah', 'arah_properti', 'tipe_unit','min_price','max_price'));
     }
 

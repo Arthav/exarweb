@@ -77,10 +77,7 @@ Tambah Listing
                             <label>Tipe Unit (Diisi apabila primary listing memiliki tipe)</label>
                             <input class="w3-input" type="text" name="tipe_unit">
                         </p>
-                        <p>
-                            <label>Total Unit (Diisi apabila primary listing)</label>
-                            <input class="w3-input" type="text" name="total_unit">
-                        </p>
+                       
                         <p>
                             <label>Developer (Diisi apabila primary listing)</label>
                             <select class="w3-select w3-border" name="mdeveloper_id">
@@ -93,11 +90,11 @@ Tambah Listing
 						@endif
                       
                         <p>
-                            <label>Luas Bangunan (m2)</label>
+                            <label>Luas Bangunan (m2)(Diisi 0 apabila tidak ada)</label>
                             <input required class="w3-input" type="text" name="luas_bangunan">
                         </p>
                         <p>
-                            <label>Luas Tanah (m2)</label>
+                            <label>Luas Tanah (m2)(Diisi 0 apabila tidak ada)</label>
                             <input required class="w3-input" type="text" name="luas_tanah">
                         </p>
                         <p>

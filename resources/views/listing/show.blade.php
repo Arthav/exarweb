@@ -240,6 +240,23 @@ Exarweb
                             </tr> --}}
 
                         </table><br><br>
+                        
+                        @if(\App\User::where('id',Auth::user()->id)->first()->mrole_id == 1 || Auth::user()->id == $mlistings->user_id))
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Nama Pemilik</th>
+                                <td style="color:#000000  !important">{{$mlistings->nama_pemilik}}</td>
+                            </tr>
+                            <tr>
+                                <th>Nomor Telpon Pemilik</th>
+                                <td style="color:#000000  !important">{{$mlistings->no_pemilik}}</td>
+                            </tr>
+                            <tr>
+                                <th>Komisi</th>
+                                <td style="color:#000000  !important">{{$mlistings->commission}}</td>
+                            </tr>
+                        </table><br><br>
+                        @endif
 
                         <table class="table table-bordered">
                             <tr>
