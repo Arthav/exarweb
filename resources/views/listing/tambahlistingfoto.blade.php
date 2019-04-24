@@ -45,7 +45,7 @@ Tambah Listing
                         @endif
 
 
-                        <input type="submit" name="submit" value="Simpan Foto" class="w3-btn w3-green w3-round-large"></input>
+                        <input type="submit" name="submit" value="Simpan Foto Ini" class="w3-btn w3-green w3-round-large"></input>
                         <a href="{{ route('Listing_Default') }}"class="w3-button w3-red w3-round-large">Selesai</a>
 
                         <br/>
