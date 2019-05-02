@@ -276,8 +276,10 @@ Exarweb
                         <div class="row">
                             <div class="col-md-12">
                                 {{-- Tombol --}}
-                                @if( $mlistings->sold == '0' && (\App\User::where('id',Auth::user()->id)->first()->mrole_id == 1 || Auth::user()->id == $mlistings->user_id))
+                                @if( $mlistings->sold == '0' && (\App\User::where('id',Auth::user()->id)->first()->mrole_id == 1 || Auth::user()->id == $mlistings->user_id || $mlistings->tipe_unit != NULL))
                                 <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Closing</button>
+                                @endif
+                                @if( $mlistings->sold == '0' && (\App\User::where('id',Auth::user()->id)->first()->mrole_id == 1 || Auth::user()->id == $mlistings->user_id))
                                 <br>
                                 <p>
                                     <button onclick="document.getElementById('hapus01').style.display='block'"
@@ -297,6 +299,8 @@ Exarweb
                                                 </div>
                                                 <div class="modal-body">
                                                     <input type="hidden" name="mlistingid" value="{{$mlistings->id}}"/>
+                                                    <input type="hidden" name="mlistingtipe" value="{{$mlistings->tipe_unit}}"/>
+                                                    @if($co->co_broke[0] == "yes")
                                                     <p>
                                                         <label>Co Broke</label>
                                                         <select class="w3-input" name="user_id">
@@ -306,6 +310,7 @@ Exarweb
                                                             @endforeach
                                                         </select>
                                                     </p>
+                                                    @endif
                                                     <br/>
                                                     <p>
                                                         <label>Harga Final</label>

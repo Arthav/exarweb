@@ -29,7 +29,7 @@ Daftar Developer Baru
   
   <p>
   <label>Kontak / Telp</label>
-  <input class="w3-input" name="kontak" type="text" required></p>
+  <input class="w3-input" name="kontak" type="text" onkeypress="isInputNumber(event)" required></p>
 
 
   <p>
@@ -53,5 +53,17 @@ Daftar Developer Baru
   <!-- End page content -->
 </div>
 
-
+<script>
+            
+    function isInputNumber(evt){
+        
+        var ch = String.fromCharCode(evt.which);
+        
+        if(!(/[0-9]/.test(ch))){
+            evt.preventDefault();
+        }
+        
+    }
+    
+</script>
 @endsection

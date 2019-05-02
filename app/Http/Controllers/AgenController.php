@@ -24,14 +24,16 @@ class AgenController extends Controller
     {
         
         $agen=user::find($id);
-        $mroles=mrole::all();
+        $mroles=mrole::all()
+        ->where('delet','=','0');
         // dd($agen);
         return view('human.agen.show',compact('agen','mroles'));
     }
 
     Public function tambah_agen()
     {
-        $mroles=mrole::all();
+        $mroles=mrole::all()
+        ->where('delet','=','0');
         return view('human.agen.tambah',compact('mroles'));
     }
  

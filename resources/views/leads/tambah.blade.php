@@ -33,7 +33,7 @@ Tambah Leads Baru
       <div style="color:white">
         <label><b>Kontak / telp</b></label>
       </div>
-      <input class="w3-input w3-border w3-margin-bottom" type="text" name="contact" >
+      <input class="w3-input w3-border w3-margin-bottom" type="text" name="contact"  onkeypress="isInputNumber(event)">
           
       <!-- Email -->
       <div style="color:white">
@@ -65,5 +65,17 @@ Tambah Leads Baru
   <!-- End page content -->
 </div>
 
-
+<script>
+            
+    function isInputNumber(evt){
+        
+        var ch = String.fromCharCode(evt.which);
+        
+        if(!(/[0-9]/.test(ch))){
+            evt.preventDefault();
+        }
+        
+    }
+    
+</script>
 @endsection

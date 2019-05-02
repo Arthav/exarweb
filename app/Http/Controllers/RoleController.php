@@ -21,14 +21,16 @@ class RoleController extends Controller
     Public function show_jabatan($id)
     {
         $jabats=mrole::find($id);
-        $bijaks=mpolicy::all();        
+        $bijaks=mpolicy::all()
+        ->where('delete','=','0');        
         return view('human.jabatan.show',compact('jabats','bijaks'));
     }
 
     Public function tambah_jabatan()
     {
         $policy=mpolicy::all();    
-        $bijaks=mpolicy::all(); 
+        $bijaks=mpolicy::all()
+        ->where('delete','=','0'); 
         return view('human.jabatan.tambah',compact('policy','bijaks'));
     }   
 

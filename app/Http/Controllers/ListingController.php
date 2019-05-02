@@ -9,6 +9,7 @@ use App\Mlisting;
 use App\Mtransaction;
 use App\User;
 use App\Image;
+use App\Mpolicy;
 Use App\Mdeveloper;
 use Auth;
 use App\Image_uploaded;
@@ -73,9 +74,11 @@ class ListingController extends Controller {
         ->where("mlistings.id", "=", $id)
         ->first()
         ;
-    
-        // dd($kontak)->toarray();
-        return view('listing.show', compact('mlistings', 'listing1', 'listing2', 'user','kontak'));
+
+        $co = mpolicy::join('mroles','mpolicy_id','=','mpolicies.id')->join('users','mrole_id','=','users.id')->selectraw("co_broke")->where('users.id','=',$para)->first();
+        // $co = DB::select(DB::raw("select co_broke from mpolicies join mroles m on mpolicies.id = m.mpolicy_id join users u on m.id = u.mrole_id where u.id = ".$para.""));
+        // dd($co);
+        return view('listing.show', compact('mlistings', 'listing1', 'listing2', 'user','kontak','co'));
     }
 
     public function tambah_listing() {
@@ -234,7 +237,20 @@ class ListingController extends Controller {
                 ])
 
                 ->first();
-
+        $tipe = Mlisting::query()
+                ->where('id','=',$request->mlistingid)
+                ->get(['tipe_unit'])
+                ->first();
+        if($tipe->tipe_unit == NULL){
+            $mlistings = mlisting::find($request->mlistingid);
+            $mlistings->sold = 1;
+            $mlistings->save();
+        }else{
+            $mlistings = mlisting::find($request->mlistingid);
+            $mlistings->sold = 1;
+            $mlistings->user_id = Auth::user()->id ;
+            $mlistings->save();
+        }
         $mlistings = mlisting::find($request->mlistingid);
         $mlistings->sold = 1;
         $mlistings->save();
