@@ -45,7 +45,7 @@ Route::post('/listing/closing', 'ListingController@closing')->name('Listing.Clos
 Route::get('/listing/primary', 'ListingController@primary')->name('Listing.Primary');
 Route::get('/listing/sold', 'ListingController@sold')->name('Listing.Sold');
 Route::get('/listing/mylist', 'ListingController@mylisting')->name('Listing.Mylist');
-Route::get('/listing/hapus', 'ListingController@hapus')->name('Listing.Hapus');
+Route::put('/listing/hapus', 'ListingController@hapus')->name('Listing.Hapus');
 //------------------------------------------------------------------------------------------------------------------------
 //Human Resource Management
 //------------------------------------------------------------------------------------------------------------------------

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Mpolicy;
 use App\Mrole;
 Use App\User;
+Use App\Mlisting;
 
 class AgenController extends Controller
 {

@@ -279,13 +279,7 @@ Exarweb
                                 @if( $mlistings->sold == '0' && (\App\User::where('id',Auth::user()->id)->first()->mrole_id == 1 || Auth::user()->id == $mlistings->user_id || $mlistings->tipe_unit != NULL))
                                 <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Closing</button>
                                 @endif
-                                @if( $mlistings->sold == '0' && (\App\User::where('id',Auth::user()->id)->first()->mrole_id == 1 || Auth::user()->id == $mlistings->user_id))
-                                <br>
-                                <p>
-                                    <button onclick="document.getElementById('hapus01').style.display='block'"
-                                    class="w3-button w3-red w3-round-large">Hapus Listing</button></p>
                               
-                                @endif
 
                                 <!-- Closing -->
                                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -330,39 +324,48 @@ Exarweb
                                     </div>
                                 </div>
 
+                                {{-- tombol delete --}}
+                                @if( $mlistings->sold == '0' && (\App\User::where('id',Auth::user()->id)->first()->mrole_id == 1 || Auth::user()->id == $mlistings->user_id))
+                                <br>
+                                <p>
+                                    <button onclick="document.getElementById('hapus01').style.display='block'"
+                                    class="w3-button w3-red w3-round-large">Hapus Listing</button></p>
 
-                                 <!--awal POP UP hapus listing-->    
+                                     <!--awal POP UP hapus listing-->    
                                 <div id="hapus01" class="w3-modal">
-                                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px" >
-                    
-                                    <div class="w3-center"><br>
-                                        <span onclick="document.getElementById('hapus01').style.display='none'"
-                                        class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
-                                    </div>
-                    
-                                    <!--awal form HAPUS listing-->
-                                    <form class="w3-container" action="{{ route('Listing.Hapus',['id' => $mlistings->id]) }}" method="post">
-                                        <div class="w3-section">
-                                        
-                                        <!-- POP UP DELETE -->
-                                        <div style="color:black">
-                                            <h3>Apakah anda yakin untuk menghapus data listing {{ $mlistings->nama }}?</h3>
+                                        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px" >
+                        
+                                        <div class="w3-center"><br>
+                                            <span onclick="document.getElementById('hapus01').style.display='none'"
+                                            class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
                                         </div>
-                                        <input class="w3-button w3-block w3-red w3-section w3-padding" type="submit" value="Delete"></input>
-                                        {{ csrf_field() }}
-                                        <input type="hidden" name="_method" value="PUT">
-                                    </form>
-                                        <!--akhir form HAPUS listing-->
-                                        
-                                        <!--tombol cancel HAPUS listing-->
-                                        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                                            <button onclick="document.getElementById('hapus01').style.display='none'" type="button" class="w3-button w3-black">Cancel</button>
+                        
+                                        <!--awal form HAPUS listing-->
+                                        <form class="w3-container" action="{{ route('Listing.Hapus',['id' => $mlistings->id]) }}" method="post">
+                                            <div class="w3-section">
+                                            
+                                            <!-- POP UP DELETE -->
+                                            <div style="color:black">
+                                                <h3>Apakah anda yakin untuk menghapus data listing {{ $mlistings->nama }}?</h3>
+                                            </div>
+                                            <input class="w3-button w3-block w3-red w3-section w3-padding" type="submit" value="Delete"></input>
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="_method" value="PUT">
+                                        </form>
+                                            <!--akhir form HAPUS listing-->
+                                            
+                                            <!--tombol cancel HAPUS listing-->
+                                            <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                                                <button onclick="document.getElementById('hapus01').style.display='none'" type="button" class="w3-button w3-black">Cancel</button>
+                                            </div>
+                        
+                                         </div>
                                         </div>
-                    
-                                     </div>
                                     </div>
-                                </div>
-                                <!--akhir POP UP HAPUS listing-->
+                                    <!--akhir POP UP HAPUS listing-->
+                              
+                                @endif
+                                
 
                             </div>
                         </div>
