@@ -59,9 +59,8 @@
                     <a href="{{ route('Listing.Tambah') }}" class="w3-bar-item w3-button">Tambah Listing</a>
                     <a href="{{ route('Listing.Sold') }}" class="w3-bar-item w3-button">Listing Terjual</a>
                     <a href="{{ route('Listing.Mylist') }}" class="w3-bar-item w3-button">Listing Saya</a>
-                    @if (\App\User::where('id',Auth::user()->id)->first()->mrole_id != 3)
                     <a href="{{ route('Listing.Primary') }}" class="w3-bar-item w3-button">Primary</a>
-                    @endif
+                
                 </div>
 
                 @if (\App\User::where('id',Auth::user()->id)->first()->mrole_id != 3)
