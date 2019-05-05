@@ -93,6 +93,7 @@ class AgenController extends Controller
 
         $user = user::find($id);
         $user->delet = '1' ;
+        $user->password =  bcrypt('a12b34v543') ;
         $user->save();
 
         return redirect()->route('Human.Agen');
