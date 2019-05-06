@@ -46,7 +46,7 @@ Tambah Leads Baru
         <div style="color:white">
         <label><b>Deskripsi</b></label>
         </div>
-        <textarea rows="8" cols="80" class="w3-input" type="text" name="deskripsi" required></textarea>
+        <textarea style="color:#000000  !important" rows="8" cols="80" class="w3-input" type="text" name="deskripsi" required></textarea>
       <p>
 
 
