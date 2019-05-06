@@ -60,19 +60,22 @@ class ReportController extends Controller
         $agen=user::find($id);
         $allviews=mlisting::join('users', 'mlistings.user_id', '=', 'users.id')
         ->selectRaw("nama,jenis_list,price, jenis_properti,luas_bangunan,luas_tanah,lokasi,kamar_mandi,kamar_tidur,kota,listrik")
-        ->where('users.id',$id)
+        ->where('user_id','=',$id)
+        ->where('mlistings.delet','=','0')
         ->paginate(10);
 
         $availableview=mlisting::join('users', 'mlistings.user_id', '=', 'users.id')
         ->selectRaw("nama,jenis_list,price, jenis_properti,luas_bangunan,luas_tanah,lokasi,kamar_mandi,kamar_tidur,kota,listrik")
         ->where('users.id',$id)
-        ->where('sold','0')
+        ->where('sold','=','0')
+        ->where('mlistings.delet','=','0')
         ->paginate(10);
 
         $soldview=mlisting::join('users', 'mlistings.user_id', '=', 'users.id')
         ->selectRaw("nama,jenis_list,price, jenis_properti,luas_bangunan,luas_tanah,lokasi,kamar_mandi,kamar_tidur,kota,listrik")
-        ->where('users.id',$id)
-        ->where('sold','1')
+        ->where('user_id','=',$id)
+        ->where('mlistings.delet','=','0')
+        ->where('sold','=','1')
         ->paginate(10);
 
         return view('report.penjualanagen.show',compact('allviews','agen','availableview','soldview'));
