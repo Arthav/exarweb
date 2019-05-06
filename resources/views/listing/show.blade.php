@@ -294,7 +294,7 @@ Exarweb
                                                 <div class="modal-body">
                                                     <input type="hidden" name="mlistingid" value="{{$mlistings->id}}"/>
                                                     <input type="hidden" name="mlistingtipe" value="{{$mlistings->tipe_unit}}"/>
-                                                    @if($co->co_broke[0] == "yes")
+                                                    @if($co->co_broke == "yes")
                                                     <p>
                                                         <label>Co Broke</label>
                                                         <select class="w3-input" name="user_id">
