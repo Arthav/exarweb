@@ -87,7 +87,7 @@ Exarweb - Leads
                         <th>Deskripsi Dicari</th>
                         <th>Nama Agen</th>
                         <th>Kontak agen</th>
-                        <th>Kontak agen-2</th>
+                        <th>Kontak whatsapp</th>
                         <th>ID Leads</th>
                       </tr>
                       @foreach($leads as $lead)
