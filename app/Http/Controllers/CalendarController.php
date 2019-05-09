@@ -55,8 +55,21 @@ class CalendarController extends Controller {
         $mcalendar->updated_at = date('Y-m-d H:i:s');
         $mcalendar->save();
 
-        $next = Mcalendar::where('user_id', Auth::user()->id)->orderby('id', 'ASC')->get()->last();
-        return redirect()->route('Calendar.Show', ['id' => $next->id]);
+        // $next = Mcalendar::where('user_id', Auth::user()->id)->orderby('id', 'ASC')->get()->last();
+        // return redirect()->route('Calendar.Show', ['id' => $next->id]);
+        $list_calendar['defaultDate'] = date('Y-m-d');
+        $list_calendar['editable'] = true;
+        $list_calendar['eventLimit'] = true;
+
+        $calendar = Mcalendar::all();
+        foreach ($calendar as $key => $value) {
+            $temp['title'] = $value->schedule_name;
+            $temp['url'] = action('CalendarController@show', ['id' => $value->id]);
+            $temp['start'] = $value->schedule_start;
+            $temp['end'] = $value->schedule_end;
+            $list_calendar['events'][] = $temp;
+        }
+        return view('calendar.index', compact('list_calendar'));
     }
 
     public function show($id) {
@@ -65,6 +78,13 @@ class CalendarController extends Controller {
                 ->first()
         ;
         return view('calendar.show', compact('mcalendars'));
+    }
+
+    public function ubah_calendar(Request $request, $id) {
+        $mcalendar = Mcalendar::find($id);
+        $mcalendar->delete();
+
+        return redirect()->route('Calendar');
     }
 
     public function hapus_calendar(Request $request, $id) {

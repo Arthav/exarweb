@@ -138,6 +138,12 @@ Property list Primary
         @endforeach
 
     </div>
+     <!-- pagination -->
+     {{ $mlistings->appends(Request::input())->links() }}
+
+     <!-- detail halaman -->
+     <h7> {{$mlistings->total() }} total listing</h7>
+     <p><h8>In this page : ({{$mlistings->count()}})</h8></p>
 </div>
 
 <link rel='stylesheet' id='vcss-css'  href="{{ asset('css/agen1.css') }}" type='text/css' media='all' />

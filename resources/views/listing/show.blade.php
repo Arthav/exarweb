@@ -311,7 +311,7 @@ Exarweb
                                                     <input required class="w3-input" type="number" name="close_price" min="1000000" value="{{$mlistings->price}}">
                                                     </p>
                                                     <p>
-                                                        <label>Komisi Final</label>
+                                                        <label>Komisi Final (%)</label>
                                                         <input required class="w3-input" type="number" name="final_commission"  value="{{$mlistings->commission}}">
                                                     </p>
                                                 </div>
@@ -372,5 +372,7 @@ Exarweb
                     </div>
                 </div>
             </div>
+   
+
                     @endsection
               

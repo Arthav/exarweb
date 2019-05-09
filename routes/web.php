@@ -25,6 +25,7 @@ Auth::routes();
 
 Route::get('/home', 'ListingController@index')->name('home');
 
+
 //KPR CALCULATOR
 
 Route::get('/calculator', 'CalculatorController@index')->name('Calculator');
@@ -46,6 +47,7 @@ Route::get('/listing/primary', 'ListingController@primary')->name('Listing.Prima
 Route::get('/listing/sold', 'ListingController@sold')->name('Listing.Sold');
 Route::get('/listing/mylist', 'ListingController@mylisting')->name('Listing.Mylist');
 Route::put('/listing/hapus', 'ListingController@hapus')->name('Listing.Hapus');
+
 //------------------------------------------------------------------------------------------------------------------------
 //Human Resource Management
 //------------------------------------------------------------------------------------------------------------------------
@@ -57,6 +59,10 @@ Route::get('/agen/tambah', 'AgenController@tambah_agen')->name('Human.Agen.Tamba
 Route::put('/agen/{id}/ubah', 'AgenController@ubah_agen')->name('Human.Agen.Ubah')->where('id', '[0-9]+');
 Route::post('/agen/simpan', 'AgenController@simpan_agen')->name('Human.Agen.Simpan');
 Route::put('/agen/{id}/hapus', 'AgenController@hapus_agen')->name('Human.Agen.Hapus')->where('id', '[0-9]+');
+
+
+Route::get('/passwordchange', 'AgenController@passchange')->name('Human.Agen.Passchange');
+Route::post('/passwordsimpan', 'AgenController@passsimpan')->name('Human.Agen.Passsimpan');
 
 //jabatan
 Route::get('/jabatan', 'RoleController@index')->name('Human.Jabatan');

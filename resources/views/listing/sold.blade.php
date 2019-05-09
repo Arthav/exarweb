@@ -138,6 +138,12 @@ Sold property list
         @endforeach
 
     </div>
+     <!-- pagination -->
+     {{ $mlistings->appends(Request::input())->links() }}
+
+     <!-- detail halaman -->
+     <h7> {{$mlistings->total() }} total listing</h7>
+     <p><h8>In this page : ({{$mlistings->count()}})</h8></p>
 </div>
 
 

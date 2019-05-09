@@ -41,7 +41,7 @@ class ListingController extends Controller {
                 ->Where("mlistings.arah_properti", "like", $arah_properti != '' ? $arah_properti : '%')
                 ->orderby("mlistings.id","desc")
                 ->groupBy("mlistings.id")
-                ->get()
+                ->paginate(10)
         ;
         // dd($mlistings);
         return view('listing.index', compact('mlistings', 'kota', 'price', 'jenis_list', 'jenis_properti', 'kamar_tidur', 'kamar_mandi', 'luas_bangunan', 'luas_tanah', 'arah_properti', 'tipe_unit','min_price','max_price'));
@@ -210,7 +210,7 @@ class ListingController extends Controller {
                 // ->orWhereNull("mlistings.tipe_unit")
                 ->orderby("mlistings.id","desc")
                 ->groupBy("mlistings.id")
-                ->get()
+                ->paginate(10)
         ;
        
 
@@ -312,7 +312,7 @@ class ListingController extends Controller {
                 // ->orWhereNull("mlistings.arah_properti")
                 ->orderby("mlistings.id","desc")
                 ->groupBy("mlistings.id")
-                ->get()
+                ->paginate(10)
         ;
        
 
@@ -356,7 +356,7 @@ class ListingController extends Controller {
                 // ->orWhereNull("mlistings.arah_properti")
                 ->orderby("mlistings.id","desc")
                 ->groupBy("mlistings.id")
-                ->get()
+                ->paginate(10)
         ;
        
 

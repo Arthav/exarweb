@@ -40,15 +40,16 @@ Exarweb: Calculator
                     <input required class="form-control" type="number" name="bunga" id="bunga" maxlength="2">
                 </p>
                 <p>
-                    <label>Tenor</label>
-                    <select name="tenor" class="form-control" id="tenor">
+                    <label>Tenor (Bulan)</label>
+                    <input required class="form-control" type="number" id="tenor" name="tenor">
+                    {{-- <select name="tenor" class="form-control" id="tenor">
                         <option value="12">12 Bulan</option>
                         <option value="24">24 Bulan</option>
                         <option value="36">36 Bulan</option>
                         <option value="48">48 Bulan</option>
                         <option value="60">60 Bulan</option>
                         <option value="120">120 Bulan</option>
-                    </select>
+                    </select> --}}
                 </p>
                 <br/>
                 <p>

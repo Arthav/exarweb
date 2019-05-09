@@ -9,6 +9,7 @@ use App\Mpolicy;
 use App\Mrole;
 Use App\User;
 Use App\Mlisting;
+use auth;
 
 class AgenController extends Controller
 {
@@ -97,5 +98,20 @@ class AgenController extends Controller
         $user->save();
 
         return redirect()->route('Human.Agen');
+    }
+
+    Public function passchange()
+    {
+        return view('human.agen.passch');
+    }
+
+    Public function passsimpan(Request $request)
+    {
+        $ids = auth::user()->id;
+        $change = user::find($ids);
+        $change->password = bcrypt($request->password);
+        $change->save();
+
+        return redirect()->route('Listing_Default');
     }
 }

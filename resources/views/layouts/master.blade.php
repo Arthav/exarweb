@@ -94,6 +94,7 @@
                     <a href="{{ route('Leads') }}" class="w3-bar-item w3-button">Leads</a>
                     <a href="{{ route('Dev') }}" class="w3-bar-item w3-button">Developer</a>
                 @endif
+                <a href="{{ route('Human.Agen.Passchange') }}" class="w3-bar-item w3-button">Change Password</a>
                 <a href="{{ route('logout') }}" class="w3-button w3-block w3-white w3-left-align" id="myBtn5" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
