@@ -58,8 +58,10 @@ Tambah Listing
                             </p>
                         <p>
                             <label>Harga Total (per tahun apabila disewakan)</label>
-                            <input required class="w3-input" type="number" name="price" min="100000"  >
+                            <input required class="w3-input" type="number" name="price" min="100000" onkeyup="myFunction()" id="input_text" >
                         </p>
+                        <p id="p1">Harga Total = </p>
+                        <br>
 
                         <p>
                             <label>Komisi (dalam persen (%))</label>
@@ -178,6 +180,21 @@ Tambah Listing
             }
             
         }
+
+        function myFunction() {
+            var inp = document.getElementById("input_text").value;
+
+            var	number_string = inp.toString(),
+            sisa 	= number_string.length % 3,
+            rupiah 	= number_string.substr(0, sisa),
+            ribuan 	= number_string.substr(sisa).match(/\d{3}/g);
+                
+            if (ribuan) {
+                separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+            document.getElementById("p1").innerHTML = "Harga Total = Rp." + rupiah + " ,-" ;
+        } 
 
         var rupiah = document.getElementById('rupiah');
 		rupiah.addEventListener('keyup', function(e){

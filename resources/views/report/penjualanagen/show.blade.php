@@ -81,7 +81,7 @@ Laporan Listing
                   <tr>
                   <td>{{$allview->nama}} </td>    
                   <td>{{$allview->jenis_list}} </td>
-                  <td>{{$allview->price}}</td>
+                  <td>Rp.{{number_format($allview->price,0,"",".")}}</td>
                   <td>{{$allview->jenis_properti}}</td>
                   <td>{{$allview->luas_bangunan}} </td>
                   <td>{{$allview->luas_tanah}} </td>
@@ -149,7 +149,7 @@ Laporan Listing
                 <tr>
                 <td>{{$allview->nama}} </td>    
                 <td>{{$allview->jenis_list}} </td>
-                <td>{{$allview->price}}</td>
+                <td>Rp.{{number_format($allview->price,0,"",".")}}</td>
                 <td>{{$allview->jenis_properti}}</td>
                 <td>{{$allview->luas_bangunan}} </td>
                 <td>{{$allview->luas_tanah}} </td>
@@ -211,7 +211,7 @@ Laporan Listing
                   <tr>
                   <td>{{$allview->nama}} </td>    
                   <td>{{$allview->jenis_list}} </td>
-                  <td>{{$allview->price}}</td>
+                  <td>Rp.{{number_format($allview->price,0,"",".")}}</td>
                   <td>{{$allview->jenis_properti}}</td>
                   <td>{{$allview->luas_bangunan}} </td>
                   <td>{{$allview->luas_tanah}} </td>

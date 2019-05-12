@@ -126,7 +126,7 @@ Sold property list
                     </a>
                 </div>
                 <div class="agenproperti-title"><h2><a href="" title="">{{$list->nama}}</a></h2>
-                    <div class="agenproperti-harga">Rp.{{$list->price}},-</div>
+                    <div class="agenproperti-harga">Rp.{{number_format($list->price,0,"",".")}},-</div>
                     <div class="agenproperti-info">{{$list->lokasi}} <br/>
                         Lt/Lb : {{$list->luas_tanah}} / {{$list->luas_bangunan}}<br/></div>
                     <a href="{{ route('Listing.Show', ['id' => $list->listid]) }}" class="btn" >Lihat &raquo;</a>
@@ -143,7 +143,7 @@ Sold property list
 
      <!-- detail halaman -->
      <h7> {{$mlistings->total() }} total listing</h7>
-     <p><h8>In this page : ({{$mlistings->count()}})</h8></p>
+     <p><h8>In this page : ({{$mlistings->count()}})</h8></p>x
 </div>
 
 

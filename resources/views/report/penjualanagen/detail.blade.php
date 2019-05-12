@@ -3,11 +3,11 @@
 @extends('layouts.master')
 
 @section('title')
-Exarweb - Laporan Komisi Saya
+Exarweb - Laporan Penjualan
 @endsection
 
 @section('content')
-Laporan Komisi
+Laporan Listing Properti
 @endsection
 
 
@@ -24,17 +24,20 @@ Laporan Komisi
 
             <!-- tabulasi -->
             <div class="w3-row">
-                <a href="javascript:void(0)" onclick="openDkaryawan(event, 'Penjualan');">
+                <a href="javascript:void(0)" onclick="openDkaryawan(event, 'detail');">
                     <div style="color:#ffffff !important" class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Penjualan dan komisi</div>
-                </a>    
+                </a>             
+                           
             </div>
             <!-- Akhir tabulasi -->
+
+
 
             <!-- isi tabs laporan penjualan -->
             <div id="Penjualan" class="w3-container tabsdkaryawan" style="display:none"> 
 
                 <!-- FILTER CARI NAMA-->
-                <form name="filter" id=filter action="{{ route('Report.Komisi.Saya') }}" method="get">
+                <form name="filter" id=filter action="{{ route('Report.Penjualan.Agen') }}" method="get">
                     <p><h5>Filter</h5></p>
                     <div class="w3-row-padding">
                         {{-- combobox --}}
@@ -74,7 +77,7 @@ Laporan Komisi
                 </form>
                 <br><br>
                 <!-- AKHIR FILTER CARI NAMA -->
-                <p><h5>Menampilkan data komisi anda pada bulan: {{$bulan}} tahun: {{$tahun}}</h5></p>
+                <p><h5>Menampilkan data penjualan bulan: {{$bulan}} tahun: {{$tahun}}</h5></p>
 
                 <!--Akhir Padding-->
 
@@ -85,11 +88,11 @@ Laporan Komisi
                         <tr>
                             <th>Nama agen</th>
                             <th>Jumlah Penjualan</th>
-                            <th>Komisi Saya</th>
+                            <th>Komisi Marketing</th>
                             <th>Potongan Co-Broking</th>
                             <th>Komisi Co-Broking</th>
                             <th>Potongan Pajak</th>
-                            <th>Komisi Akhir Saya</th>
+                            <th>Komisi Akhir Marketing</th>
                         </tr>
                         @foreach($overview as $over)
                         <tr>
@@ -99,7 +102,7 @@ Laporan Komisi
                             <td>Rp.{{number_format($over->potongan,0,"",".")}}</td>
                             <td>Rp.{{number_format($over->tambahan,0,"",".")}}</td>
                             <td>Rp.{{number_format($over->pajak,0,"",".")}}</td>
-                            <td>Rp.{{number_format($over->komisiAkir,0,"",".")}}</td>                       
+                            <td>Rp.{{number_format($over->komisiAkir,0,"",".")}}</td>                        
                         </tr>
                         @endforeach
 
@@ -124,9 +127,54 @@ Laporan Komisi
                     });
                 </script>
 
+                {{-- Tombol Download --}}
+                {{-- <a href="{{ route('Report.Overview.Download',['bulan'=>$bulan],['tahun'=>$tahun]) }}"class="w3-button w3-green w3-round-large">Export all data to excel</a></p> --}}
+
+               
+
 
             </div>
             <!-- akhir isi tabs --> 
+
+
+
+
+
+
+            <!-- isi tabs data listing -->
+            <div id="Listing" class="w3-container tabsdkaryawan" style="display:none"> 
+                <!-- TABLE -->
+                <p> 
+                <div class="w3-responsive" style=color:black>
+                    <table class="w3-table-all">
+                        <tr>
+                            <th>Nama</th>
+                            <th>Jumlah Listing Aktif</th>
+                        </tr>
+                        @foreach($listingview as $allview)
+                        <tr>
+                            <td><a href="{{ route('Report.Penjualan.Agen.Show', ['id' => $allview->id]) }}">{{$allview->name}} </td>    
+                            <td>{{$allview->ListNow}} </td>                  
+                        </tr>
+                        @endforeach
+
+
+                    </table>
+                </div>
+                </p>
+                <!--Akhir Table-->
+
+
+                <!-- pagination -->
+                {{ $listingview->appends(Request::input())->links() }}
+
+                <!-- detail halaman -->
+                <h7> {{$listingview->total() }} total data</h7>
+                <p><h8>In this page : ({{$listingview->count()}}) </h8></p>
+
+            </div>
+            <!-- akhir isi tabs --> 
+
 
 
             <!--akhir container-->

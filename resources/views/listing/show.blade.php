@@ -177,9 +177,14 @@ Exarweb
                                 <th>Jenis List</th>
                                 <td style="color:#000000  !important">{{$mlistings->jenis_list}}</td>
                             </tr>
+                         <?php
+                        //  $a = $mlisting->price;
+                        //  $price = int $mlistings->price;
+                         ?>
                             <tr>
+                                   
                                 <th>Harga</th>
-                                <td style="color:#000000  !important">{{$mlistings->price}}</td>
+                                <td style="color:#000000  !important">Rp. {{number_format($mlistings->price,0,"",".")}} ,00</td>
                             </tr>
                             <tr>
                                 <th>Tipe</th>
@@ -253,7 +258,7 @@ Exarweb
                             </tr>
                             <tr>
                                 <th>Komisi</th>
-                                <td style="color:#000000  !important">{{$mlistings->commission}}</td>
+                                <td style="color:#000000  !important">{{$mlistings->commission}}%</td>
                             </tr>
                         </table><br><br>
                         @endif
@@ -308,7 +313,7 @@ Exarweb
                                                     <br/>
                                                     <p>
                                                         <label>Harga Final</label>
-                                                    <input required class="w3-input" type="number" name="close_price" min="1000000" value="{{$mlistings->price}}">
+                                                    <input required class="w3-input" type="number" name="close_price" min="1000000" value="{{$mlistings->price}}"  onkeyup="myFunction()" id="input_text">
                                                     </p>
                                                     <p>
                                                         <label>Komisi Final (%)</label>
@@ -372,7 +377,23 @@ Exarweb
                     </div>
                 </div>
             </div>
-   
+   <script>
+       function myFunction() {
+            var inp = document.getElementById("input_text").value;
+
+            var	number_string = inp.toString(),
+            sisa 	= number_string.length % 3,
+            rupiah 	= number_string.substr(0, sisa),
+            ribuan 	= number_string.substr(sisa).match(/\d{3}/g);
+                
+            if (ribuan) {
+                separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+            document.getElementById("p1").innerHTML = "Harga Total = Rp." + rupiah + " ,-" ;
+        } 
+
+   </script>
 
                     @endsection
               
